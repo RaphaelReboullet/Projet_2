@@ -9,7 +9,7 @@
 namespace Model;
 
 
-class PlayerManager
+class PlayerManager extends AbstractManager
 {
 
 }

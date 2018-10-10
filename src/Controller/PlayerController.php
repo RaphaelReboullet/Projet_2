@@ -9,7 +9,9 @@
 namespace Controller;
 
 
-class PlayerController
+use Model\AbstractManager;
+
+class PlayerController extends AbstractController
 {
 
 }
