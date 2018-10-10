@@ -13,5 +13,11 @@ use Model\PlayerManager;
 
 class PlayerController extends AbstractController
 {
+    public function team()
+    {
+        $playerManager = new playerManager($this->getPdo());
+        $players = $playerManager->selectAll();
 
+        return $this->twig->render('Player/team.html.twig', ['players' => $players]);
+    }
 }

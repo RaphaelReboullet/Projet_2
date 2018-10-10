@@ -11,7 +11,7 @@ namespace Model;
 
 class PlayerManager extends AbstractManager
 {
-    const TABLE = 'newteam';
+    const TABLE = 'player';
 
     public function __construct(\PDO $pdo)
     {
