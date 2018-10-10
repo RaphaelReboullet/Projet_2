@@ -91,7 +91,7 @@ class Player
     public function setPosition($position) :int
     {
         $this->position = $position;
-        return $position
+        return $position;
     }
 
     public function getNumber() :int
