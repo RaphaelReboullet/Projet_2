@@ -8,8 +8,8 @@
 
 namespace Controller;
 
-
-use Model\AbstractManager;
+use Model\Player;
+use Model\PlayerManager;
 
 class PlayerController extends AbstractController
 {

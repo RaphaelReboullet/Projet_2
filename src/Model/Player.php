@@ -9,7 +9,7 @@
 namespace Model;
 
 
-class player
+class Player
 {
     private $firstname;
 
