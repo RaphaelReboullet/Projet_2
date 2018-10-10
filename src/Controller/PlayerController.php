@@ -15,9 +15,18 @@ class PlayerController extends AbstractController
 {
     public function team()
     {
-        $playerManager = new playerManager($this->getPdo());
+        $playerManager = new PlayerManager($this->getPdo());
         $players = $playerManager->selectAll();
 
         return $this->twig->render('Player/team.html.twig', ['players' => $players]);
     }
+
+    public function playerDetails(int $id)
+    {
+        $playerManager = new PlayerManager($this->getPdo());
+        $player = $playerManager->selectOneById($id);
+
+        return $this->twig->render('Player/playerDetails.html.twig', ['playerDetails' => $player]);
+    }
+
 }
