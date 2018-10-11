@@ -24,7 +24,7 @@ class Player
 
     private $number;
 
-    private $isactif;
+    private $isActif;
 
 
     public function getFirstname() :string
@@ -106,12 +106,12 @@ class Player
 
     public function getIsactif() :bool
     {
-        return $this->isactif;
+        return $this->isActif;
     }
 
-    public function setIsactif($isactif) :bool
+    public function setIsactif($isActif) :bool
     {
-        $this->isactif = $isactif;
-        return $isactif;
+        $this->isActif = $isActif;
+        return $isActif;
     }
 }
