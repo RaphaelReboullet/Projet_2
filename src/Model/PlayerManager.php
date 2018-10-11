@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class PlayerManager extends AbstractManager
 {
     const TABLE = 'player';
