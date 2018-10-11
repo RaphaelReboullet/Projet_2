@@ -1,18 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Statistiques d'{{ playerDetails.firstname }} {{ playerDetails.lastname }}</h1>
-    {% for key,value in playerDetails|keys %}
-        Key : {{ key }}
-        Value : {{ value }}
-    {% endfor %}
-    <p>{{ playerDetails.id }}- {{ playerDetails.lastname }} {{ playerDetails.firstname }}</p>
-    <a href="/player/edit/{{ playerDetails.id }}">Edit</a>
-    <a href="/player/delete/{{playerDetails.id}}">Supprimer</a>
-    <a href="/newteam">Back</a>
-{% endblock %}
 
-{% block content %}
     <body>
     <div class="container">
         <div class="row justify-content-center">

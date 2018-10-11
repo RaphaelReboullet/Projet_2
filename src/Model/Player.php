@@ -60,12 +60,12 @@ class Player
         return $birthdate;
     }
 
-    public function getHeight() :float
+    public function getHeight() :int
     {
         return $this->height;
     }
 
-    public function setHeight($height) :float
+    public function setHeight($height) :int
     {
         $this->height = $height;
         return $height;
