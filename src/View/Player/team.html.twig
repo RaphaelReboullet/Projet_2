@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<h1>NewTeam</h1>
+<ul>
+    {% for player in players %}
+    <li><a href="/Newteam/player/{{ player.id }}">{{ player.firstname }} {{ player.lastname }}</a></li>
+    {% else %}
+    <li>Nothing to display</li>
+    {% endfor %}
+</ul>
+<a href="/Newteam/player/addPlayer">Ajouter</a>
+{% endblock %}
