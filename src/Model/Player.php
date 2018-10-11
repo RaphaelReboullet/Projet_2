@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class Player
 {
     private $firstname;
@@ -50,23 +49,23 @@ class Player
         return $lastname;
     }
 
-    public function getBirthdate() :int
+    public function getBirthdate() :string
     {
         return $this->birthdate;
     }
 
-    public function setBirthdate($birthdate) :int
+    public function setBirthdate($birthdate) :string
     {
         $this->birthdate = $birthdate;
         return $birthdate;
     }
 
-    public function getHeight() :int
+    public function getHeight() :float
     {
         return $this->height;
     }
 
-    public function setHeight($height) :int
+    public function setHeight($height) :float
     {
         $this->height = $height;
         return $height;
@@ -83,12 +82,12 @@ class Player
         return $weight;
     }
 
-    public function getPosition() :int
+    public function getPosition() :string
     {
         return $this->position;
     }
 
-    public function setPosition($position) :int
+    public function setPosition($position) :string
     {
         $this->position = $position;
         return $position;
@@ -103,6 +102,11 @@ class Player
     {
         $this->number = $number;
         return $number;
+    }
+
+    public function getIsactif() :bool
+    {
+        return $this->isactif;
     }
 
     public function setIsactif($isactif) :bool
