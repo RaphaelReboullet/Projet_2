@@ -19,6 +19,7 @@ class PlayerController extends AbstractController
         $players = $playerManager->selectAll();
 
         return $this->twig->render('Player/team.html.twig', ['players' => $players]);
+
     }
 
     public function playerDetails(int $id)
