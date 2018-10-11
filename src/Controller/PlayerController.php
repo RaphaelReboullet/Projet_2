@@ -43,7 +43,7 @@ class PlayerController extends AbstractController
             $player->setNumber($_POST['number']);
             $player->setIsactif($_POST['isactif']);
             $id = $playerManager->insert($player);
-            header('Location:/player/' . $id);
+            header('Location:/newteam/player/' . $id);
         }
         return $this->twig->render('Player/add.html.twig');
     }
