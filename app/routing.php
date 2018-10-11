@@ -18,8 +18,8 @@ $routes = [
         ['delete', '/item/delete/{id:\d+}', 'GET'], // action, url, method
     ],
     'Player' => [
-        ['team', '/Newteam', 'GET'],
-        ['playerDetails', '/Newteam/player/{id:\d+}', 'GET']
-
-    ],
+        ['team', '/newteam', ['GET']],
+        ['playerDetails', '/newteam/player/{id:\d+}', 'GET'],
+        ['addPlayer', '/newteam/addplayer', ['GET', 'POST']],
+    ]
 ];
