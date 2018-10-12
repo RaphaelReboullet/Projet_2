@@ -51,7 +51,12 @@ class PlayerController extends AbstractController
     public function delPlayer(int $id)
     {
         $playerManager = new PlayerManager($this->getPdo());
-        $playerManager->delete($id);
+        $player = $playerManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $player->setIsactif(0);
+            $playerManager->update($player);
+        }
         header('Location:/newteam');
     }
 }
