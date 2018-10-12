@@ -1,3 +1,0 @@
-- *Votre accès PHPMyAdmin : * http://www.campus-bordeaux.ovh:6011
-- *Votre accès serveur DB : * 92.175.11.66:6010	
-- *Votre dépôt github : * https://github.com/WildCodeSchool/bordeaux-0918-php-new-team
