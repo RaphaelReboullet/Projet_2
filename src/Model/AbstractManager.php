@@ -49,7 +49,7 @@ abstract class AbstractManager
     public function selectAll(): array
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table .
-            ' WHERE isactif="1" ' , \PDO::FETCH_CLASS, $this->className)->fetchAll();
+            ' WHERE isactif="1" ', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 
     /**
