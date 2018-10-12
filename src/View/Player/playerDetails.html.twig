@@ -5,6 +5,9 @@
     <body>
     <div class="container">
         <div class="row justify-content-center">
+            <h1><span class="badge badge-secondary">Caractéristiques</span></h1>
+        </div>
+        <div class="row justify-content-center">
             <div class="col-md-5 col-8">
                 <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539193449/PROJET%202%20NEWTEAM/japon_reduit.png"
                      alt="logo_japan" class="logo_japan">
@@ -16,8 +19,8 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="row justify-content-center">
-                    <div class="col-md-7 col-6 offset-2">
-                        <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539193458/PROJET%202%20NEWTEAM/olive_reduit.png"
+                    <div class="col-md-9 col-10 ">
+                        <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539330360/PROJET%202%20NEWTEAM/2845032_640px_reduit.jpg"
                              alt="logo_japan" class="player_img">
                     </div>
                 </div>
@@ -29,7 +32,7 @@
                         <div class="col md-1">
                             <th>Prénom</th>
                         </div>
-                        <div class="col md-3"></div>
+                        <div class="col md-4"></div>
                         <th>{{ playerDetails.firstname }}</th>
                         <th>
                             <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
@@ -101,9 +104,19 @@
         </div>
         <div class="row">
             <div class="col-md-5 col-12">
-                <button type="button" class="btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
-                </button>
-                <a href="/newteam" class="btn btn-primary">Retour</a>
+                <form method="GET">
+                    <a href="/newteam/delete/{{ playerDetails.id }}"
+                       class="btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
+                    </a>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <p></p>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-md-2 col-12">
+                <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
             </div>
         </div>
     </div>
