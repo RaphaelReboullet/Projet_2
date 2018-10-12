@@ -47,4 +47,6 @@ class PlayerController extends AbstractController
         }
         return $this->twig->render('Player/add.html.twig');
     }
+
+ 
 }
