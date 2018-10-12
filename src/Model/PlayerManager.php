@@ -21,8 +21,8 @@ class PlayerManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("INSERT 
-        INTO $this->table (`firstname`, `lastname`, `birthdate`, `height`, `weight`, `position`, `number`, `isactif`) 
-        VALUES (:firstname, :lastname, :birthdate, :height, :weight, :position, :number, :isactif)");
+        INTO $this->table (`firstname`, `lastname`, `birthdate`, `height`, `weight`, `position`, `number`, `isactif`, `portrait`) 
+        VALUES (:firstname, :lastname, :birthdate, :height, :weight, :position, :number, :isactif, :portrait)");
         $statement->bindValue('firstname', $player->getFirstname(), \PDO::PARAM_STR);
         $statement->bindValue('lastname', $player->getLastname(), \PDO::PARAM_STR);
         $statement->bindValue('birthdate', $player->getBirthdate(), \PDO::PARAM_STR);
@@ -31,6 +31,7 @@ class PlayerManager extends AbstractManager
         $statement->bindValue('position', $player->getPosition(), \PDO::PARAM_STR);
         $statement->bindValue('number', $player->getNumber(), \PDO::PARAM_INT);
         $statement->bindValue('isactif', $player->getIsactif(), \PDO::PARAM_BOOL);
+        $statement->bindValue('portrait', $player->getPortrait(), \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
