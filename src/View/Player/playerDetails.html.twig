@@ -101,8 +101,12 @@
         </div>
         <div class="row">
             <div class="col-md-5 col-12">
-                <button type="button" class="btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
-                </button>
+                <form method ="GET">
+                    <a href="/newteam/delete/{{playerDetails.id}}" class="btn
+                        btn-outline-dark
+                        btn-block text-center btn_del">Supprimer le joueur
+                    </a>
+                </form>
             </div>
         </div>
     </div>

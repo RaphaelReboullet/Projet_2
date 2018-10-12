@@ -10,6 +10,8 @@ namespace Model;
 
 class Player
 {
+    private $id;
+
     private $firstname;
 
     private $lastname;
@@ -25,6 +27,11 @@ class Player
     private $number;
 
     private $isActif;
+
+    public function getId() :int
+    {
+        return $this->id;
+    }
 
 
     public function getFirstname() :string

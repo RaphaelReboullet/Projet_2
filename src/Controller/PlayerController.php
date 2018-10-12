@@ -43,8 +43,20 @@ class PlayerController extends AbstractController
             $player->setNumber($_POST['number']);
             $player->setIsactif($_POST['isactif']);
             $id = $playerManager->insert($player);
-            header('Location:/player/' . $id);
+            header('Location:team/player/' . $id);
         }
         return $this->twig->render('Player/add.html.twig');
+    }
+
+    public function delPlayer(int $id)
+    {
+        $playerManager = new PlayerManager($this->getPdo());
+        $player = $playerManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $player->setIsactif(0);
+            $playerManager->update($player);
+        }
+        header('Location:/newteam');
     }
 }
