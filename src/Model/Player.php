@@ -28,6 +28,8 @@ class Player
 
     private $isActif;
 
+    private $portrait;
+
     public function getId() :int
     {
         return $this->id;
@@ -120,5 +122,22 @@ class Player
     {
         $this->isActif = $isActif;
         return $isActif;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPortrait()
+    {
+        return $this->portrait;
+    }
+
+    /**
+     * @param mixed $portrait
+     */
+    public function setPortrait($portrait)
+    {
+        $this->portrait = $portrait;
+        return $portrait;
     }
 }

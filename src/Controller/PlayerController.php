@@ -42,6 +42,7 @@ class PlayerController extends AbstractController
             $player->setPosition($_POST['position']);
             $player->setNumber($_POST['number']);
             $player->setIsactif($_POST['isactif']);
+            $player->setPortrait($_POST['portrait']);
             $id = $playerManager->insert($player);
 
             header('Location:/newteam/player/' . $id);
