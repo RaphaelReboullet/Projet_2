@@ -17,6 +17,10 @@ class PlayerManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
+    /**
+     * @param Player $player
+     * @return int
+     */
     public function insert(Player $player): int
     {
         // prepared request
