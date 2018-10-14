@@ -17,12 +17,17 @@ class PlayerManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
+    /**
+     * @param Player $player
+     * @return int
+     */
     public function insert(Player $player): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT 
-        INTO $this->table (`firstname`, `lastname`, `birthdate`, `height`, `weight`, `position`, `number`, `isactif`, `portrait`) 
-        VALUES (:firstname, :lastname, :birthdate, :height, :weight, :position, :number, :isactif, :portrait)");
+        $statement = $this->pdo->prepare("INSERT INTO $this->table 
+        (`firstname`, `lastname`, `birthdate`, `height`, `weight`, `position`, `number`, `isactif`, `portrait`) 
+        VALUES 
+        (:firstname, :lastname, :birthdate, :height, :weight, :position, :number, :isactif, :portrait)");
         $statement->bindValue('firstname', $player->getFirstname(), \PDO::PARAM_STR);
         $statement->bindValue('lastname', $player->getLastname(), \PDO::PARAM_STR);
         $statement->bindValue('birthdate', $player->getBirthdate(), \PDO::PARAM_STR);
