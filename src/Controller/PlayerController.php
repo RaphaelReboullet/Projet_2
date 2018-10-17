@@ -61,4 +61,10 @@ class PlayerController extends AbstractController
         }
         header('Location:/newteam');
     }
+
+    public function welcome()
+    {
+        return $this->twig->render('Accueil/accueil_page.html.twig');
+    }
 }
+
