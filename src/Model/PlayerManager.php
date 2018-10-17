@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mcnitch
+ * User: mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
  * Date: 10/10/18
  * Time: 09:49
  */
@@ -17,6 +17,10 @@ class PlayerManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
+    /**
+     * @param Player $player
+     * @return int
+     */
     public function insert(Player $player): int
     {
         // prepared request
