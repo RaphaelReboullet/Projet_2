@@ -49,7 +49,6 @@ class PlayerManager extends AbstractManager
 
     public function update(Player $player):int
     {
-
         // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET `isActif` = :isActif WHERE id=:id");
         $statement->bindValue('id', $player->getId(), \PDO::PARAM_INT);
@@ -58,3 +57,4 @@ class PlayerManager extends AbstractManager
         return $statement->execute();
     }
 }
+
