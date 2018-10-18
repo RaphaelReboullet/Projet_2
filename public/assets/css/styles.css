@@ -50,6 +50,17 @@ body {
     margin: 20px;
 }
 
+/*encounter*/
+.encounter{
+    padding: 20px;
+}
+.calendar-head{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.calendar{
+    height: 100px;
+}
 .card-title-player
 {
     text-align: center;
@@ -83,13 +94,3 @@ div.card.rosterteam
     border-color : #ac1415;
     border-width : 4px;
 }
-
-
-
-
-
-
-
-
-
-

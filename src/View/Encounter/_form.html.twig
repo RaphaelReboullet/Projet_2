@@ -1,0 +1,36 @@
+<div class="container">
+    <form method = "post">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="exampleFormControl">Date de la rencontre</label>
+                    <input type ="date" class="form-control" name ="match_date"
+                           id="exampleFormControlTextarea1" rows="3" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Sélectionner le pays</label>
+                <select class="form-control" name ="team_id" id="exampleFormControlSelect1">
+                    {% for team in teams  %}
+                    <option value="{{ team.id }}">{{ team.team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            {#<div class="col-md-2">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Annulé</label>
+                    <select class="form-control" name = "isactif" id="exampleFormControlSelect1">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>#}
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
+                <a type="submit" href="/encounter/add" class="btn btn-outline-dark">Envoyer</a>
+
+            </div>
+        </div>
+    </form>
+</div>
