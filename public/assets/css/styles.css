@@ -1,5 +1,50 @@
-.rosterteam{
+.rosterteam
+{
     width: 15rem;
     padding: 10px;
     margin: 20px;
 }
+
+.card-title-player
+{
+    text-align: center;
+}
+
+a.btn.btn-outline-danger
+{
+    font-size: 1rem;
+    padding: 0px;
+    margin-top: 25px;
+    border-color: #ac1415;
+    color: #ac1415;
+}
+
+a.btn.btn-outline-dark, button.btn.btn-primary, a.btn.btn-primary
+{
+    border-color: #ac1415;
+    color: #ac1415;
+    background-color: white;
+}
+
+a.btn.btn-outline-dark:hover, button.btn.btn-primary:hover, a.btn.btn-primary:hover,
+a.btn.btn-outline-danger:hover
+{
+    background-color: #ac1415;
+    color: white;
+}
+
+div.card.rosterteam
+{
+    border-color : #ac1415;
+    border-width : 4px;
+}
+
+
+
+
+
+
+
+
+
+

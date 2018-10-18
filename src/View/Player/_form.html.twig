@@ -1,16 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
 <div class="container">
     <form method = "post">
                 <div class="row">
                     <div class="col-md-6 ">
                         <div class="form-group">
                             <label for="exampleFormControl">Prénom</label>
-                            <input type ="text" class="form-control" name ="firstname" id="exampleFormControlTextarea1" rows="3">
+                            <input type ="text" class="form-control" name ="firstname" id="exampleFormControlTextarea1"
+                                   rows="3">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleFormControl">Nom</label>
-                            <input type ="text" class="form-control" name ="lastname" id="exampleFormControlTextarea1" rows="3">
+                            <input type ="text" class="form-control" name ="lastname" id="exampleFormControlTextarea1"
+                                   rows="3">
                         </div>
                     </div>
                 </div>
@@ -18,23 +24,24 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="exampleFormControl">Date de naissance</label>
-                            <input type ="date" class="form-control" name ="birthdate" id="exampleFormControlTextarea1" rows="3">
+                            <input type ="date" class="form-control" name ="birthdate" id="exampleFormControlTextarea1"
+                                   rows="3">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
-                            <label for="exampleFormControl">Taille</label>
-                            <input type ="number" class="form-control" name ="height" id="exampleFormControlTextarea1" rows="3">
+                            <label for="exampleFormControl">Taille (en cm)</label>
+                            <input type ="number" class="form-control" name ="height" id="exampleFormControlTextarea1"
+                                   rows="3">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
-                            <label for="exampleFormControl">Poids</label>
-                            <input type ="number" class="form-control" name ="weight" id="exampleFormControlTextarea1" rows="3">
+                            <label for="exampleFormControl">Poids (en kg)</label>
+                            <input type ="number" class="form-control" name ="weight" id="exampleFormControlTextarea1"
+                                   rows="3">
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-md-2">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Position</label>
@@ -49,9 +56,12 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             <label for="exampleFormControl">Numéro</label>
-                            <input type ="number" class="form-control" name ="number" id="exampleFormControlTextarea" rows="3">
+                            <input type ="number" class="form-control" name ="number" id="exampleFormControlTextarea"
+                                   rows="3">
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-2">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Actif</label>
@@ -61,14 +71,18 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label for="exampleFormControl">URL de l'image</label>
-                        <input type ="text" class="form-control" name ="portrait" id="exampleFormControlTextarea" rows="3">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="exampleFormControl">URL de l'image</label>
+                            <input type ="text" class="form-control" name ="portrait" id="exampleFormControlTextarea"
+                                   rows="3">
+                        </div>
                     </div>
                 </div>
+
                 <div class="row justify-content-center">
                      <div class="col">
                         <button type="submit" class="btn btn-primary" style="width: 200px;">Submit</button>
                      </div>
+
+{% endblock %}
