@@ -3,3 +3,11 @@
     padding: 10px;
     margin: 20px;
 }
+/*encounter*/
+.encounter{
+    padding: 20px;
+}
+.card-header{
+    font-weight: bold;
+    letter-spacing: 1px;
+}

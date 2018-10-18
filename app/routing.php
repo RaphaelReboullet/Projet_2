@@ -22,5 +22,8 @@ $routes = [
         ['playerDetails', '/newteam/player/{id:\d+}', 'GET'],
         ['addPlayer', '/newteam/addplayer', ['GET', 'POST']],
         ['delPlayer','/newteam/delete/{id:\d+}', 'GET'],
-    ]
+    ],
+    'Encounter' => [
+        ['encounter', '/encounter', ['GET', 'POST']],
+    ],
 ];

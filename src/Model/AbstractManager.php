@@ -69,4 +69,17 @@ abstract class AbstractManager
 
         return $statement->fetch();
     }
+
+    public function selectEncounter(): array
+    {
+        return $this->pdo->query('SELECT match_date, team, flag FROM ' . $this->table .
+            ' LEFT JOIN team ON ' . $this->table . '.team_id = team.id 
+                ORDER BY match_date;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
+
+    public function selectTeam(): array
+    {
+        return $this->pdo->query('SELECT id, team FROM ' . $this->table . ' ORDER BY team; '
+            , \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
 }
