@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class Team
 {
     private $id;
@@ -29,9 +28,6 @@ class Team
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getTeam(): string
     {
         return $this->team;

@@ -10,7 +10,6 @@ namespace Model;
 
 class TeamManager extends AbstractManager
 {
-
     const TABLE = 'team';
 
     public function __construct(\PDO $pdo)
@@ -18,4 +17,3 @@ class TeamManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 }
-

@@ -79,7 +79,7 @@ abstract class AbstractManager
 
     public function selectTeam(): array
     {
-        return $this->pdo->query('SELECT id, team FROM ' . $this->table . ' ORDER BY team; '
-            , \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdo->query('SELECT id, team FROM ' . $this->table . ' 
+                                            ORDER BY team;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }
