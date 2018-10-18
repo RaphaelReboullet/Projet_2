@@ -3,31 +3,33 @@
 {% block content %}
 
     <body>
+
+    <br>
+    <br>
+    <br>
+
+
     <div class="container">
-        <div class="row justify-content-center">
+
+        <div class="caracteristiques row justify-content-center">
             <h1><span class="badge badge-secondary">Caractéristiques</span></h1>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5 col-8">
-                <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539193449/PROJET%202%20NEWTEAM/japon_reduit.png"
-                     alt="logo_japan" class="logo_japan">
-            </div>
-            <div class="col-7 text-center">
-            </div>
-        </div>
+
+        <br>
+        <br>
 
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="row justify-content-center">
-                    <div class="col-md-9 col-10 ">
-                        <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539330360/PROJET%202%20NEWTEAM/2845032_640px_reduit.jpg"
-                             alt="logo_japan" class="player_img">
-                    </div>
+            <div class="col-md-5-lg-4 pd-4">
+                <div class="card playerdetail" >
+                    <img class="card-img-top" src="{{ playerDetails.portrait }}" alt="Card image cap">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-2">
+            </div>
+
+            <div class="tab col-md-6">
+
                 <table class="table table-striped table-dark">
-                    <body>
                     <tr>
                         <div class="col md-1">
                             <th>Prénom</th>
@@ -98,8 +100,8 @@
                             <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
-                    </body>
                 </table>
+
             </div>
         </div>
         <div class="row">
