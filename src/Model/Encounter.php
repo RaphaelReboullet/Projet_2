@@ -36,7 +36,7 @@ class Encounter
 
     public function setMatchDate($matchDate): Encounter
     {
-        $this->matchDate = $matchDate;
+        $this->matchDate = date('Y-m-d', strtotime(str_replace('/', '-', $matchDate)));
         return $this;
     }
 

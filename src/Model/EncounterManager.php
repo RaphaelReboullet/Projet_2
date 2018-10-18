@@ -20,8 +20,9 @@ class EncounterManager extends AbstractManager
 
     public function insertEncounter(Encounter $encounter): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`match_date`) VALUES (:match_date)");
+        $statement = $this->pdo->prepare("INSERT INTO $this->table (`match_date`, `team_id`) VALUES (:match_date, :team_id)");
         $statement->bindValue('match_date', $encounter->getMatchDate(), \PDO::PARAM_STR);
+        $statement->bindValue('team_id', $encounter->getTeamId(),\PDO::PARAM_INT);
 
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();

@@ -17,15 +17,5 @@ class TeamManager extends AbstractManager
     {
         parent::__construct(self::TABLE, $pdo);
     }
-
-    public function insertTeam(Team $team): int
-    {
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`id`) VALUES (:id)");
-        $statement->bindValue('id', $team->getId(), \PDO::PARAM_INT);
-
-        if ($statement->execute()) {
-            return $this->pdo->lastInsertId();
-        }
-    }
 }
 

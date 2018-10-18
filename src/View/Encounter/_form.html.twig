@@ -5,14 +5,14 @@
                 <div class="form-group">
                     <label for="exampleFormControl">Date de la rencontre</label>
                     <input type ="date" class="form-control" name ="match_date"
-                           id="exampleFormControlTextarea1" rows="3">
+                           id="exampleFormControlTextarea1" rows="3" >
                 </div>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Sélectionner le pays</label>
-                <select class="form-control" name ="id" id="exampleFormControlSelect1">
+                <select class="form-control" name ="team_id" id="exampleFormControlSelect1">
                     {% for team in teams  %}
-                    <option value="{{ team.id }}" > {{ team.team }} </option>
+                    <option value="{{ team.id }}">{{ team.team }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -28,5 +28,9 @@
         </div>
         <div class="row justify-content-center">
             <div class="col">
-                <button type="submit" class="btn btn-primary">Envoyer</button>
+                <a type="submit" href="/encounter/add" class="btn btn-outline-dark">Envoyer</a>
+
             </div>
+        </div>
+    </form>
+</div>

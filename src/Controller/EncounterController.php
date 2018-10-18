@@ -31,16 +31,10 @@ class EncounterController extends AbstractController
             $encounterManager = new EncounterManager($this->getPdo());
             $encounter = new Encounter();
             $encounter->setMatchDate($_POST['match_date']);
+            $encounter->setTeamId($_POST['team_id']);
             $encounterManager->insertEncounter($encounter);
         }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $teamManager = new TeamManager($this->getPdo());
-            $team = new Team();
-            $team->setId($_POST['id']);
-            $teamManager->insertTeam($team);
-
-            header('Location:/encounter');
-        }
+        header('Location:/encounter');
         return $this->twig->render('Encounter/encounter.html.twig');
     }
 }

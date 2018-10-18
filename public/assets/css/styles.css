@@ -7,7 +7,10 @@
 .encounter{
     padding: 20px;
 }
-.card-header{
+.calendar-head{
     font-weight: bold;
     letter-spacing: 1px;
+}
+.calendar{
+    height: 100px;
 }
