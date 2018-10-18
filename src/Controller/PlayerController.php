@@ -1,11 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mcnitch
+ * User: mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
+
  * Date: 10/10/18
  * Time: 09:49
  */
-
 namespace Controller;
 
 use Model\Player;
@@ -28,7 +28,7 @@ class PlayerController extends AbstractController
         return $this->twig->render('Player/playerDetails.html.twig', ['playerDetails' => $player]);
     }
 
-    public function addPlayer()
+    public function add()
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -50,7 +50,7 @@ class PlayerController extends AbstractController
         return $this->twig->render('Player/add.html.twig');
     }
 
-    public function delPlayer(int $id)
+    public function del(int $id)
     {
         $playerManager = new PlayerManager($this->getPdo());
         $player = $playerManager->selectOneById($id);
@@ -60,5 +60,10 @@ class PlayerController extends AbstractController
             $playerManager->update($player);
         }
         header('Location:/newteam');
+    }
+
+    public function welcome()
+    {
+        return $this->twig->render('Accueil/accueil_page.html.twig');
     }
 }

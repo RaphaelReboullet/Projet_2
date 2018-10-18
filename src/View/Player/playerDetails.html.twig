@@ -104,9 +104,9 @@
         </div>
         <div class="row">
             <div class="col-md-5 col-12">
-                <form method="GET">
-                    <a href="/newteam/delete/{{ playerDetails.id }}"
-                       class="btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
+                <form id="deleteForm" method="GET">
+                    <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
+                       class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
                     </a>
                 </form>
             </div>
@@ -122,4 +122,19 @@
     </div>
     </body>
 {% endblock %}
+{% block javascript  %}
+{{ parent() }}
+    <script type="text/javascript">
+        document.getElementById("delete").addEventListener("click",
+            function(event){ event.preventDefault();
+                if (confirm("Voulez-vous vraiment supprimer ce joueur ? ") === true) {
+                    alert("{{ playerDetails.firstname ~ ' ' ~ playerDetails.lastname }} a été supprimé de l'effectif");
+                    location.replace("/newteam/delete/{{ playerDetails.id }}");
+                } else {
+                    alert("{{ playerDetails.firstname ~ ' ' ~ playerDetails.lastname }} vous remercie de votre confiance");
+                }
+            }
+        );
 
+    </script>
+{% endblock %}

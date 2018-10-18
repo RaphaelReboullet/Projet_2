@@ -10,21 +10,18 @@
  */
 
 $routes = [
-    'Item' => [ // Controller
-        ['index', '/', 'GET'], // action, url, method
-        ['add', '/item/add', ['GET', 'POST']], // action, url, method
-        ['edit', '/item/edit/{id:\d+}', ['GET', 'POST']], // action, url, method
-        ['show', '/item/{id:\d+}', 'GET'], // action, url, method
-        ['delete', '/item/delete/{id:\d+}', 'GET'], // action, url, method
-    ],
     'Player' => [
+        ['welcome', '/', ['GET']],
         ['team', '/newteam', ['GET']],
+
         ['playerDetails', '/newteam/player/{id:\d+}', 'GET'],
-        ['addPlayer', '/newteam/addplayer', ['GET', 'POST']],
-        ['delPlayer','/newteam/delete/{id:\d+}', 'GET'],
+
+        ['add', '/newteam/addplayer', ['GET', 'POST']],
+        ['del','/newteam/delete/{id:\d+}', 'GET'],
     ],
     'Encounter' => [
         ['encounter', '/encounter', ['GET']],
         ['addEncounter', '/encounter/add', ['GET', 'POST']],
-    ],
+    ]
 ];
+
