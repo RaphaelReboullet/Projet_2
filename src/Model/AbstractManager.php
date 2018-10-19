@@ -82,12 +82,14 @@ abstract class AbstractManager
         return $this->pdo->query('SELECT id, team FROM ' . $this->table . ' 
                                             ORDER BY team;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
-    /**public function selectGoal(): array
+
+     // TODO : implement goal
+    public function selectGoal(): array
     {
         return $this->pdo->query(
             'SELECT encounter.opponent_goal, encounter.match_date, COUNT(goal),
                          FROM ' . $this->table . '
                             LEFT JOIN encounter AS e ON ' . $this->table . '.encounter_id = e.id
                                 ORDER BY e.match_date;', \PDO::FETCH_CLASS, $this->className )->fetchAll();
-    }*/
+    }
 }
