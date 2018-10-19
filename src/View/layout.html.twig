@@ -35,7 +35,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
-    </div>|
+    </div>
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2 navpart3">
         <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item">
@@ -49,6 +49,21 @@
 
 </nav>
 {% block content %}{% endblock %}
+<footer>
+    <div class="container fluid">
+<ul class="nav justify-content-center">
+    <li class="foot-item">
+        <a class="nav-link active texte-menu-footer" href="#">Mentions légales</a>
+    </li>
+    <li class="foot-item">
+        <a class="nav-link" href="https://www.facebook.com/TheJapanFootball"><img class="ikon" src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539893574/md_5a98273a0ce86_3.png"></a>
+    </li>
+    <li class="foot-item">
+        <a class="nav-link" href="https://www.instagram.com/japan_football_"><img class="ikon" src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539892479/Instagram-white.png"></a>
+    </li>
+</ul>
+    </div>
+</footer>
 {% block javascript %}
     {% include '_javascript.html.twig' %}
 {% endblock %}

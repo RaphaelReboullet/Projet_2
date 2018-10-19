@@ -35,6 +35,5 @@ class EncounterController extends AbstractController
             $encounterManager->insertEncounter($encounter);
         }
         header('Location:/encounter');
-        return $this->twig->render('Encounter/encounter.html.twig');
     }
 }
