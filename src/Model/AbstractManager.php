@@ -83,7 +83,7 @@ abstract class AbstractManager
                                             ORDER BY team;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 
-     // TODO : implement goal
+    // TODO : implement goal
     public function selectGoal(): array
     {
         return $this->pdo->query('SELECT encounter.opponent_goal, encounter.match_date, COUNT(goal) 
