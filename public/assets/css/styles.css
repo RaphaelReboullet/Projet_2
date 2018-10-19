@@ -94,3 +94,20 @@ div.card.rosterteam
     border-color : #ac1415;
     border-width : 4px;
 }
+
+footer {
+    background-color: #ac1415;
+    border-top: 5px solid #ffa91b;
+    margin-top: 5%;
+    height: 80px;
+    font-size: 1.2em;
+}
+.texte-menu-footer {
+    color: white;
+    padding-top: 10%;
+}
+.ikon {
+    width: 50px;
+    height: 50px;
+
+}
