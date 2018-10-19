@@ -86,10 +86,8 @@ abstract class AbstractManager
      // TODO : implement goal
     public function selectGoal(): array
     {
-        return $this->pdo->query(
-            'SELECT encounter.opponent_goal, encounter.match_date, COUNT(goal),
-                         FROM ' . $this->table . '
-                            LEFT JOIN encounter AS e ON ' . $this->table . '.encounter_id = e.id
-                                ORDER BY e.match_date;', \PDO::FETCH_CLASS, $this->className )->fetchAll();
+        return $this->pdo->query('SELECT encounter.opponent_goal, encounter.match_date, COUNT(goal) 
+                      FROM ' . $this->table . ' LEFT JOIN encounter AS e ON ' . $this->table . '.encounter_id = e.id 
+                       ORDER BY encounter.match_date;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }
