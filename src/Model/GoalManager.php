@@ -8,7 +8,7 @@
 
 namespace Model;
 
-Class GoalManager extends AbstractManager
+class GoalManager extends AbstractManager
 {
     const TABLE = 'goal';
 
