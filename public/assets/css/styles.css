@@ -64,7 +64,7 @@ a.btn.btn-outline-danger
     color: #ac1415;
 }
 
-a.btn.btn-outline-dark, button.btn.btn-primary, a.btn.btn-primary
+a.btn.btn-outline-dark, button.btn.btn-primary, a.btn.btn-primary, button.btn-secondary.btn-sm.btn-block
 {
     border-color: #ac1415;
     color: #ac1415;
@@ -72,7 +72,7 @@ a.btn.btn-outline-dark, button.btn.btn-primary, a.btn.btn-primary
 }
 
 a.btn.btn-outline-dark:hover, button.btn.btn-primary:hover, a.btn.btn-primary:hover,
-a.btn.btn-outline-danger:hover
+a.btn.btn-outline-danger:hover, button.btn-secondary.btn-sm.btn-block:hover
 {
     background-color: #ac1415;
     color: white;
@@ -124,13 +124,15 @@ div.card.news
 
 img.d-block.w-100
 {
-    border-radius:3%;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .titrepagequipe
 {
     font-weight: bold;
     text-align: center;
+    padding-top: 80px;
 }
 
 .badge-secondary
@@ -149,7 +151,31 @@ div.tab.col-md-6
     font-weight: bold;
 }
 
+.caracteristiques
+{
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
 
+.row.justify-content-center
+{
+    padding-top: 80px;
+}
+
+.ajout
+{
+    padding-top: 80px;
+}
+
+.form
+{
+    padding-top: 40px;
+}
+
+.deuxieme.col, .quatrieme.col, .sixieme.col
+{
+    padding-top: 40px;
+}
 
 
 

@@ -4,10 +4,6 @@
 
     <body>
 
-    <br>
-    <br>
-    <br>
-
 
     <div class="container">
 
@@ -15,19 +11,15 @@
             <h1><span class="badge badge-secondary">Caractéristiques</span></h1>
         </div>
 
-        <br>
-        <br>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-around d-flex align-content-center flex-wrap">
             <div class="col-md-5-lg-4 pd-4">
-                <div class="card playerdetail" >
+                <div class="card playerdetail">
                     <img class="card-img-top" src="{{ playerDetails.portrait }}" alt="Card image cap">
                 </div>
             </div>
-            <div class="col-md-2">
-            </div>
 
-            <div class="tab col-md-6">
+            <div class="tab col-md-6 d-flex align-content-center flex-wrap">
 
                 <table class="table table-striped table-dark">
                     <tr>
@@ -104,21 +96,17 @@
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-5 col-12">
+        <div class="row justify-content-between">
+            <div class="col-md-5">
                 <form id="deleteForm" method="GET">
                     <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
                        class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
                     </a>
                 </form>
             </div>
-        </div>
-        <div class="row">
-            <p></p>
-        </div>
-        <div class="row justify-content-end">
-            <div class="col-md-2 col-12">
-                <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
+                <div class="col-md-3 justify-content-right">
+                    <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
+                </div>
             </div>
         </div>
     </div>
