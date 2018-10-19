@@ -22,7 +22,7 @@
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-0 order-md-0 navpart1">
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item">
-                <a class="nav-link ml-4 texte-menu-navbar" href="infos">INFOS</a>
+                <a class="nav-link ml-4 texte-menu-navbar" href="news">INFOS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link ml-4 mr-3 texte-menu-navbar" href="/newteam">EQUIPE</a>
@@ -39,7 +39,7 @@
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2 navpart3">
         <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item">
-                <a class="nav-link ml-3 mr-4 texte-menu-navbar" href="calendrier">CALENDRIER</a>
+                <a class="nav-link ml-3 mr-4 texte-menu-navbar" href="encounter">CALENDRIER</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link mr-4 texte-menu-navbar" href="contact">CONTACT</a>
@@ -49,6 +49,21 @@
 
 </nav>
 {% block content %}{% endblock %}
+<footer>
+    <div class="container fluid">
+<ul class="nav justify-content-center">
+    <li class="foot-item">
+        <a class="nav-link active texte-menu-footer" href="#">Mentions légales</a>
+    </li>
+    <li class="foot-item">
+        <a class="nav-link" href="https://www.facebook.com/TheJapanFootball"><img class="ikon" src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539893574/md_5a98273a0ce86_3.png"></a>
+    </li>
+    <li class="foot-item">
+        <a class="nav-link" href="https://www.instagram.com/japan_football_"><img class="ikon" src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539892479/Instagram-white.png"></a>
+    </li>
+</ul>
+    </div>
+</footer>
 {% block javascript %}
     {% include '_javascript.html.twig' %}
 {% endblock %}

@@ -50,6 +50,17 @@ body {
     margin: 20px;
 }
 
+/*encounter*/
+.encounter{
+    padding: 20px;
+}
+.calendar-head{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.calendar{
+    height: 100px;
+}
 .card-title-player
 {
     text-align: center;
@@ -177,10 +188,20 @@ div.tab.col-md-6
     padding-top: 40px;
 }
 
+footer {
+    background-color: #ac1415;
+    border-top: 5px solid #ffa91b;
+    margin-top: 5%;
+    height: 80px;
+    font-size: 1.2em;
+}
+.texte-menu-footer {
+    color: white;
+    padding-top: 10%;
+}
+.ikon {
+    width: 50px;
+    height: 50px;
 
-
-
-
-
-
+}
 

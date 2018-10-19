@@ -11,12 +11,17 @@
 
 $routes = [
     'Player' => [
-        ['welcome', '/', ['GET']],
+        ['welcome', '/news', ['GET']],
         ['team', '/newteam', ['GET']],
 
         ['playerDetails', '/newteam/player/{id:\d+}', 'GET'],
+
         ['add', '/newteam/addplayer', ['GET', 'POST']],
         ['del','/newteam/delete/{id:\d+}', 'GET'],
+    ],
+    'Encounter' => [
+        ['encounter', '/encounter', ['GET']],
+        ['addEncounter', '/encounter/add', ['GET', 'POST']],
     ]
 ];
 
