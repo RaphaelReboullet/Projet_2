@@ -57,7 +57,9 @@ body {
 }
 /*--------*/
 
-
+.h1 {
+    font-family:'Electroharmonix' ;
+}
 }
 .rosterteam
 {
@@ -127,7 +129,13 @@ div.card-body
     padding-right: 0px;
     height: 220px;
 }
-
+.card-body-team
+{
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 80px;
+}
 h5.card-title
 {
     margin-left: 15px;
@@ -172,7 +180,7 @@ div.tab.col-md-6
     padding: 0px;
 }
 
-.ajouter,.form
+.ajouter.form
 {
     font-weight: bold;
 }
@@ -276,6 +284,10 @@ footer {
     }
 
     /*--------*/
+
+    .titrepagequipe {
+        font-size: 1.7em;
+    }
     /* FOOTER MOBILE */
     .texte-menu-footer {
         font-size: 0.9em;

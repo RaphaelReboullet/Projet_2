@@ -10,10 +10,10 @@
 
             <div class="row justify-content-around">
                 {% for player in players %}
-                <div class="col-md-3-lg-4 pd-4">
+                <div class="col-md-3-lg-4 p-4">
                         <div class="card rosterteam" >
                             <img class="card-img-top" src="{{ player.portrait }}" alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-body-team">
                                 <h5 class="card-title-player">{{ player.lastname }}  {{ player.firstname }}</h5>
                                 <a href="/newteam/player/{{ player.id }}" class="btn btn-outline-danger btn-block">
                                     Caractéristiques</a>
@@ -22,7 +22,10 @@
                 </div>
                 {% endfor %}
             </div>
-            <a href="/newteam/addplayer" class="btn btn-outline-dark">Ajouter un joueur</a>
+        </div>
+            <div class="row justify-content-center">
+            <a href="/newteam/addplayer" class="btn btn-outline-dark ">Ajouter un joueur</a>
+            </div>
         </div>
 
 {% endblock %}
