@@ -13,13 +13,13 @@
 
 
         <div class="row justify-content-around d-flex align-content-center flex-wrap">
-            <div class="col-md-5-lg-4 pd-4">
+            <div class="col-11 col-md-5 col-lg-4 pd-4">
                 <div class="card playerdetail">
                     <img class="card-img-top" src="{{ playerDetails.portrait }}" alt="Card image cap">
                 </div>
             </div>
 
-            <div class="tab col-md-6 d-flex align-content-center flex-wrap">
+            <div class="tab col-10 col-md-6 d-flex align-content-center flex-wrap">
 
                 <table class="table table-striped table-dark">
                     <tr>
@@ -98,9 +98,12 @@
         </div>
         <div class="row justify-content-between">
             <div class="col-md-5">
-                <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
-                   class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
-                </a>
+                  <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
+                     class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
+                  </a>
+                <div class="col-12 col-md-3 justify-content-right">
+                    <p></p>
+                </div>
             </div>
                 <div class="col-md-3 justify-content-right">
                     <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>

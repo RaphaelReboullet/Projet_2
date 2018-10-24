@@ -23,6 +23,13 @@ body {
     font-family: 'Inconsolata';
     letter-spacing: 1.5px;
 }
+
+/* NAVBAR PC*/
+
+@media screen and (min-width: 968px){
+.date {
+    display: none;
+}
 .navbar {
     background-color: #ac1415;
     height: 100px;
@@ -43,6 +50,19 @@ body {
     font-family: 'Electroharmonix';
 }
 
+.navbar_mobile {
+    display: none;
+}
+
+.navbar a:hover {
+    color: #ffa91b;
+}
+/*--------*/
+
+.h1 {
+    font-family:'Electroharmonix' ;
+}
+}
 .rosterteam
 {
     width: 15rem;
@@ -102,23 +122,38 @@ div.card.rosterteam
     border-width : 7px;
 }
 
-.navbar a:hover
-{
-    color: #ffa91b;
-}
+
 
 div.card-body
+ {
+     margin: 0px;
+     padding-left: 0px;
+     padding-right: 0px;
+     height: 220px;
+ }
+div.card-body-encounter
 {
     margin: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    height: 250px;
 }
-
+.mobile_score {
+    padding-top: 30px;
+}
+.card-body-team
+{
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 80px;
+}
 h5.card-title
 {
     margin-left: 15px;
     margin-right: 15px;
     font-weight: bold;
+    font-size: 1.5em;
 }
 
 
@@ -158,7 +193,7 @@ div.tab.col-md-6
     padding: 0px;
 }
 
-.ajouter,.form
+.ajouter.form
 {
     font-weight: bold;
 }
@@ -184,10 +219,10 @@ div.tab.col-md-6
     padding-top: 40px;
 }
 
-.deuxieme.col, .quatrieme.col, .sixieme.col
+/*.deuxieme.col, .quatrieme.col, .sixieme.col
 {
     padding-top: 40px;
-}
+}*/
 
 footer {
     background-color: #ac1415;
@@ -211,4 +246,203 @@ footer {
 {
     padding-top: 40px;
 }
+.goal {
+    padding-top: 0px;
+    font-size: 3em;
+    font-weight: bold;
+}
 
+@media screen and (min-width: 601px) and (max-width: 768px) {
+
+    /* NAVBAR MOBILE */
+    .navbar_mobile {
+        background-color: #ac1415;
+        height: 80px;
+        border-bottom: 5px solid #ffa91b;
+        letter-spacing: 3px;
+    }
+
+    .logoburger {
+        width: 60px;
+    }
+
+    .bouton-burger {
+        justify-content: end;
+    }
+
+    .nav-item {
+
+        font-family: 'Electroharmonix';
+        background-color: #ac1415;
+        z-index: 1000;
+    }
+
+    .navbar-toggler-icon {
+        border: none;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .texte-menu-navbar {
+        color: white;
+    }
+
+    .logo_nav {
+        display: none;
+    }
+    .date {
+        display: none;
+    }
+    /*--------*/
+
+    .titrepagequipe {
+        font-size: 1.7em;
+    }
+
+    h5.card-title
+    {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    div.card-body-encounter
+    {
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        height: 180px;
+    }
+
+
+
+    /* FOOTER MOBILE */
+    .texte-menu-footer {
+        font-size: 0.9em;
+    }
+
+    .ikon {
+        width: 40px;
+        height: 40px;
+
+    }
+}
+/*--------*/
+    @media screen and (max-width: 600px) {
+.carousel.slide {
+   display: none;
+}
+        .date {
+            padding-top: 20px;
+            justify-content: center;
+        }
+        .date_enc {
+            width:105px;
+            height:75px;
+        }
+        /* NAVBAR MOBILE */
+        .navbar_mobile {
+            background-color: #ac1415;
+            height: 80px;
+            border-bottom: 5px solid #ffa91b;
+            letter-spacing: 3px;
+        }
+
+        .logoburger {
+            width: 60px;
+        }
+
+        .bouton-burger {
+            justify-content: end;
+        }
+
+        .nav-item {
+
+            font-family: 'Electroharmonix';
+            background-color: #ac1415;
+            z-index: 1000;
+        }
+
+        .navbar-toggler-icon {
+            border: none;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .texte-menu-navbar {
+            color: white;
+        }
+
+        .logo_nav {
+            display: none;
+        }
+        .nav-link {
+            background-color: #ffa91b;
+        }
+        /*--------*/
+
+        .titrepagequipe {
+            font-size: 1.7em;
+        }
+
+        h5.card-title
+        {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        div.card-body-encounter
+        {
+            margin: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            height: 180px;
+        }
+
+
+        /* FOOTER MOBILE */
+        .texte-menu-footer {
+            font-size: 0.9em;
+        }
+
+        .ikon {
+            width: 40px;
+            height: 40px;
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
