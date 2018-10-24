@@ -1,36 +1,39 @@
-<div class="container">
-    <form action="/encounter/add" method="post">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="exampleFormControl">Date de la rencontre</label>
-                    <input type ="date" class="form-control" name ="match_date"
-                           id="exampleFormControlTextarea1" rows="3" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Sélectionner le pays</label>
-                <select class="form-control" name ="team_id" id="exampleFormControlSelect1">
-                    {% for team in teams  %}
-                    <option value="{{ team.id }}">{{ team.team }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            {#<div class="col-md-2">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Annulé</label>
-                    <select class="form-control" name = "isactif" id="exampleFormControlSelect1">
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                    </select>
-                </div>
-            </div>#}
-        </div>
-        <div class="row justify-content-center">
-            <div class="col">
-                <button type="submit" class="btn btn-outline-dark">Envoyer</button>
+<button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addEncounter">
+    Ajouter une rencontre
+</button>
 
+<div class="modal fade" id="addEncounter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter une rencontre</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <form action="/encounter/add" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControl">Date de la rencontre</label>
+                        <input type="date" class="form-control" name="match_date"
+                               id="exampleFormControlTextarea1" rows="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Sélectionner le pays</label>
+                        <select class="form-control" name="team_id" id="exampleFormControlSelect1">
+                            {% for team in teams %}
+                                <option value="{{ team.id }}">{{ team.team }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p><?= var_dump($_POST)?></p>
+                    <button type="button" class="btn btn-secondery" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-outline-dark">Envoyer</button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>

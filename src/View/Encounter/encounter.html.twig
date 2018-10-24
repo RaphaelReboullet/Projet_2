@@ -3,6 +3,7 @@
 {% block content %}
     <div class="encounter container">
         {% for encounter in encounters %}
+
         <div class="row justify-content-around">
             <div class="col encounter">
                 <div class="card text-center">
@@ -18,25 +19,22 @@
                             <div class="col-5 col-md-3">
                                 <h5 class="card-title">{{ encounter.team }}</h5>
                                 <img class="card-img-top flag" src="{{ encounter.flag }}" alt="Country flag">
-                            </div>
-                        </div>
+                       
+
                     </div>
                     <div class="card-footer mobile_score text-muted">
                         <div class="row">
-                        <div class="col-4 offset-1">
-                            <p class="goal">{{ encounter.oppenent_goal }}</p>
-                        </div>
-                        <div class="col-2">
-                            <p class="goal">-{{ encounter.oppenent_goal }}</p>
-                        </div>
-                        <div class="col-4">
-                            <p class="goal">{{ encounter.oppenent_goal }}</p>
-                        </div>
+                         <div class="col-2">
+                                    {% if date(encounter.match_date) < date() %}
+                                        <p>{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
+                                    {% else %}
+                                        <p> - </p>
+                                    {% endif %}
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
         <div class="row justify-content-around">
             <div class="col-8 col-md-3">
