@@ -11,7 +11,7 @@
 
 $routes = [
     'Player' => [
-        ['welcome', '/news', ['GET']],
+        ['welcome', '/', ['GET']],
         ['team', '/newteam', ['GET']],
 
         ['playerDetails', '/newteam/player/{id:\d+}', 'GET'],

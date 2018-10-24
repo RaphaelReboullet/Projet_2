@@ -3,33 +3,39 @@
 {% block content %}
     <div class="encounter container">
         {% for encounter in encounters %}
-        <div class="row justify-content-around">
-            <div class="col encounter">
-                <div class="card text-center">
-                    <div class="card-header calendar-head">
-                        {{ encounter.match_date|date(" d / m / Y ")  }}
-                    </div>
-                    <div class="card-body">
-                        <div class="row justify-content-around">
-                            <div class="col-2">
-                                <h5 class="card-title">Japon</h5>
-                                <img class="card-img-top flag" src="/assets//images/japanflag.jpg" alt="japanflag.jpg">
-                            </div>
-                            <div class="col-2">
-                                <p>- {{ encounter.oppenent_goal }}</p>
-                            </div>
-                            <div class="col-2">
-                                <h5 class="card-title">{{ encounter.team }}</h5>
-                                <img class="card-img-top flag" src="{{ encounter.flag }}" alt="Country flag">
-                            </div>
+            <div class="row justify-content-around">
+                <div class="col encounter">
+                    <div class="card text-center">
+                        <div class="card-header calendar-head">
+                            {{ encounter.match_date|date(" d / m / Y ") }}
                         </div>
-                        {#<a href="#" class="btn btn-primary">Go somewhere</a>#}
-                    </div>
-                    <div class="card-footer text-muted">
+                        <div class="card-body">
+                            <div class="row justify-content-around">
+                                <div class="col-2">
+                                    <h5 class="card-title">Japon</h5>
+                                    <img class="card-img-top flag" src="/assets//images/japanflag.jpg"
+                                         alt="japanflag.jpg">
+                                </div>
+                                <div class="col-2">
+                                    {% if date(encounter.match_date) < date() %}
+                                        <p>{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
+                                    {% else %}
+                                        <p> - </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-2">
+                                    <h5 class="card-title">{{ encounter.team }}</h5>
+                                    <img class="card-img-top flag" src="{{ encounter.flag }}"
+                                         alt="Country flag">
+                                </div>
+                            </div>
+                            {# <a href="#" class="btn btn-primary">Go somewhere</a> #}
+                        </div>
+                        <div class="card-footer text-muted">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
     </div>
     {% include 'Encounter/_form.html.twig' %}
