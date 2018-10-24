@@ -9,28 +9,46 @@
                     <div class="card-header calendar-head">
                         {{ encounter.match_date|date(" d / m / Y ")  }}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body-encounter">
                         <div class="row justify-content-around">
-                            <div class="col-2">
+                            <div class="col-5 col-md-3">
                                 <h5 class="card-title">Japon</h5>
                                 <img class="card-img-top flag" src="/assets//images/japanflag.jpg" alt="japanflag.jpg">
                             </div>
-                            <div class="col-2">
-                                <p>- {{ encounter.oppenent_goal }}</p>
-                            </div>
-                            <div class="col-2">
+                            <div class="col-5 col-md-3">
                                 <h5 class="card-title">{{ encounter.team }}</h5>
                                 <img class="card-img-top flag" src="{{ encounter.flag }}" alt="Country flag">
                             </div>
                         </div>
-                        {#<a href="#" class="btn btn-primary">Go somewhere</a>#}
                     </div>
-                    <div class="card-footer text-muted">
+                    <div class="card-footer mobile_score text-muted">
+                        <div class="row">
+                        <div class="col-4 offset-1">
+                            <p class="goal">{{ encounter.oppenent_goal }}</p>
+                        </div>
+                        <div class="col-2">
+                            <p class="goal">-{{ encounter.oppenent_goal }}</p>
+                        </div>
+                        <div class="col-4">
+                            <p class="goal">{{ encounter.oppenent_goal }}</p>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         {% endfor %}
+        <div class="row justify-content-around">
+            <div class="col-8 col-md-3">
+                <button type="submit" class="btn btn-outline-dark btn-block">Ajouter un match</button>
+            </div>
+            <div class="col-12 col-md-1">
+                <p></p>
+            </div>
+            <div class="col-8 col-md-3">
+                <button type="submit" class="btn btn-outline-dark btn-block">Ajouter un score</button>
+
+            </div>
+        </div>
     </div>
-    {% include 'Encounter/_form.html.twig' %}
 {% endblock %}
