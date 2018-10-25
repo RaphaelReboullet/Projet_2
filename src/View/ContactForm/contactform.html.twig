@@ -9,7 +9,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nom</label>
                         <input type="text" class="form-control" name="username" id="exampleFormControlInput1"
-                               placeholder="Nom"
+                               placeholder=""
                                required
                                value="{% if (_POST['username'] is defined) %}{{ _POST['username'] }}{% endif %}">
                         {{ usernameErr }}
@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Prénom</label>
                         <input type="text" class="form-control" name="userfirstname" id="exampleFormControlInput1"
-                               placeholder="Prénom"
+                               placeholder=""
                                required
                                value="{% if (_POST['userfirstname'] is defined) %}{{ _POST['userfirstname'] }}{% endif %}">
                         {{ userfirstnameErr }}
@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Téléphone</label>
                         <input type="tel" class="form-control" name="userphone" id="exampleFormControlInput1"
-                               placeholder="Téléphone"
+                               placeholder=""
                                required
                                value="{% if (_POST['userphone'] is defined) %}{{ _POST['userphone'] }}{% endif %}">
                         {{ userphoneErr }}
@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Objet</label>
                         <input type="text" class="form-control" name="userobject" id="exampleFormControlInput1"
-                               placeholder="Objet"
+                               placeholder=""
                                required
                                value="{% if (_POST['userobject'] is defined) %}{{ _POST['userobject'] }}{% endif %}">
                         {{ userobjectErr }}
@@ -64,7 +64,7 @@
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Votre message</label>
-                <textarea class="form-control" name="contact-us_message" id="contact-us_message" placeholder="Votre message" required></textarea>
+                <textarea class="form-control" name="contact-us_message" id="contact-us_message" placeholder="" required></textarea>
             </div>
             <div class="row justify-content-center">
                 <div class="col-11 col-md-4">

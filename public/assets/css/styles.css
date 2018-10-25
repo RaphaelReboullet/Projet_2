@@ -63,6 +63,66 @@ body {
     font-family:'Electroharmonix' ;
 }
 }
+/* commun shadow */
+
+.form-control {
+    box-shadow: 2px 2px 2px #888888;
+}
+.navbar {
+    box-shadow: 2px 2px 2px #888888;
+}
+.texte-menu-navbar {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card-img-top {
+    box-shadow: 2px 2px 2px #888888;
+}
+.goal_encounter {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card-header {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card-title {
+    text-shadow: 2px 2px 2px #888888;
+}
+.titrepagequipe {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card.rosterteam {
+    box-shadow: 2px 2px 2px #888888;
+}
+.btn-outline-danger {
+    box-shadow: 2px 2px 2px #888888;
+}
+.card-title-player {
+    text-shadow: 2px 2px 2px #888888;
+    padding-top: 10px;
+}
+.card.news {
+    box-shadow: 2px 2px 2px #888888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .card_details {
     max-width: 350px;
     max-height: 350px;
@@ -96,7 +156,7 @@ a.btn.btn-outline-danger
 {
     font-size: 1rem;
     padding: 0px;
-    margin-top: 25px;
+    margin-top: 15px;
     border-color: #ac1415;
     color: #ac1415;
 }
@@ -107,6 +167,7 @@ button.btn.btn-outline-dark
     border-color: #ac1415;
     color: #ac1415;
     background-color: white;
+    box-shadow: 2px 2px 2px #888888;
 }
 
 a.btn.btn-outline-dark:hover, button.btn.btn-primary:hover, a.btn.btn-primary:hover,
