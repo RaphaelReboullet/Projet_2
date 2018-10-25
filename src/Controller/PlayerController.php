@@ -13,6 +13,18 @@ use Model\PlayerManager;
 
 class PlayerController extends AbstractController
 {
+    const METHODS = [
+        'firstname' => 'setFirstname',
+        'lastname' => 'setLastname',
+        'birthdate' => 'setBirthdate',
+        'height' => 'setHeight',
+        'weight' => 'setWeight',
+        'position' => 'setPosition',
+        'number' => 'setNumber',
+        'isactif' => 'setIsactif',
+        'portrait' => 'setPortrait',
+        ];
+
     public function team()
     {
         $playerManager = new PlayerManager($this->getPdo());
@@ -49,7 +61,7 @@ class PlayerController extends AbstractController
         }
         return $this->twig->render('Player/add.html.twig');
     }
-
+    // TODO : supprimer method del car = modify
     public function del(int $id)
     {
         $playerManager = new PlayerManager($this->getPdo());
@@ -66,4 +78,19 @@ class PlayerController extends AbstractController
     {
         return $this->twig->render('Accueil/accueil_page.html.twig');
     }
+
+    public function modify(int $id,string $col)
+    {
+        if (key_exists($col, self::METHODS)) {
+            $method = self::METHODS[$col];
+        }
+        $playerManager = new PlayerManager($this->getPdo());
+        $player = $playerManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $player->$method($var);
+            $playerManager->updateStat($player);
+        }
+    }
 }
+

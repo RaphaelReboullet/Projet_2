@@ -29,7 +29,10 @@
                         <div class="col md-4"></div>
                         <th>{{ playerDetails.firstname }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -39,7 +42,9 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.lastname }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -49,7 +54,9 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.birthdate|date(" d / m / Y ") }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -59,7 +66,9 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.height }} cm</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -69,7 +78,9 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.weight }} kg</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -79,7 +90,9 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.position }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -89,20 +102,19 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.number }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Modifier
+                            </button>
                         </th>
                     </tr>
                 </table>
-
             </div>
         </div>
         <div class="row justify-content-between">
             <div class="col-md-5">
-                <form id="deleteForm" method="GET">
-                    <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
-                       class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
-                    </a>
-                </form>
+                <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
+                   class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
+                </a>
             </div>
                 <div class="col-md-3 justify-content-right">
                     <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
@@ -110,7 +122,9 @@
             </div>
         </div>
     </div>
+    {% include 'Player/_modal_form.html.twig' %}
     </body>
+
 {% endblock %}
 {% block javascript  %}
 {{ parent() }}
