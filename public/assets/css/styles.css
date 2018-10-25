@@ -251,6 +251,11 @@ footer {
     font-size: 3em;
     font-weight: bold;
 }
+.goal_encounter {
+    justify-content: center;
+    font-size: 3em;
+    font-family: 'Inconsolata';
+}
 
 @media screen and (min-width: 601px) and (max-width: 768px) {
 
@@ -389,7 +394,7 @@ footer {
             display: none;
         }
         .nav-link {
-            background-color: #ffa91b;
+            background-color: #ac1415;
         }
         /*--------*/
 
@@ -411,7 +416,6 @@ footer {
             padding-right: 0px;
             height: 180px;
         }
-
 
         /* FOOTER MOBILE */
         .texte-menu-footer {
