@@ -63,13 +63,19 @@ body {
     font-family:'Electroharmonix' ;
 }
 }
+.card_details {
+    max-width: 350px;
+    max-height: 350px;
+}
 .rosterteam
 {
     width: 15rem;
     padding: 10px;
     margin: 20px;
 }
-
+.contact {
+    padding: 50px;
+  }
 /*encounter*/
 .encounter{
     padding: 20px;
