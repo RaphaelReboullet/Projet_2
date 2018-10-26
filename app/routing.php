@@ -21,7 +21,9 @@ $routes = [
     ],
     'Encounter' => [
         ['encounter', '/encounter', ['GET']],
-        ['addEncounter', '/encounter/add', ['GET', 'POST']],
-    ]
+        ['add', '/encounter/add', ['GET', 'POST']],
+        ['addGoal', '/encounter/addgoal', ['GET', 'POST']],
+        ['edit', '/encounter/edit', ['GET', 'POST']],
+    ],
 ];
 
