@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class session {
+class Session {
 
     private $admin;
 
@@ -16,5 +16,21 @@ class session {
     public function getPassword() :string
     {
         return $this->password;
+    }
+
+    /**
+     * @param mixed $admin
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 }

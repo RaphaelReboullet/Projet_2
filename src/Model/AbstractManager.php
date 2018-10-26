@@ -41,12 +41,11 @@ abstract class AbstractManager
         $this->pdo = $pdo;
     }
 
-    public function selectAdmin()
+    public function selectAdmin(): array
     {
-    return $this->pdo->query('SELECT admin, password FROM ' . $this->table .
-            ' WHERE admin = :admin ', \PDO::FETCH_CLASS, $this->className)->fetch();
+       return $this->pdo->query('SELECT * FROM ' . $this->table,
+           \PDO::FETCH_CLASS, $this->className)->fetchall();
     }
-
 
     /**
      *

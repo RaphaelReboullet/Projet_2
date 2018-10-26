@@ -25,6 +25,9 @@ $routes = [
     ],
     'ContactForm' => [
         ['formcontroll', '/contactform', ['GET', 'POST']],
+    ],
+    'Session' => [
+        ['login', '/login', ['GET', 'POST']],
     ]
 ];
 
