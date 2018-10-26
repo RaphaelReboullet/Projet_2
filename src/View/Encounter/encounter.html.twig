@@ -30,9 +30,9 @@
                                 </div>
                                 <div class="col-12 col-md-4">
                                     {% if date(encounter.match_date) < date() %}
-                                        <p>{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
+                                        <p class="goals">{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
                                     {% else %}
-                                        <p> - </p>
+                                        <p class="goals"> - </p>
                                     {% endif %}
                                 </div>
                                 <div class="col-4">
