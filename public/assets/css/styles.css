@@ -1,3 +1,4 @@
+/* --------------- FONTS --------------- */
 @font-face {
     font-family: 'Inconsolata';
     src: url('Inconsolata-Regular.ttf') format('truetype');
@@ -18,52 +19,61 @@
     font-style: normal;
 }
 body {
-    background-image : url("https://res.cloudinary.com/dnpr9xeop/image/upload/v1539790670/PROJET%202%20NEWTEAM/japan-grunge-flag-header_2000_0_8.jpg");
-    background-attachment: fixed;
+    /*background-image : url("https://res.cloudinary.com/dnpr9xeop/image/upload/v1539790670/PROJET%202%20NEWTEAM/japan-grunge-flag-header_2000_0_8.jpg");*/
+    background-image: url("https://res.cloudinary.com/dnpr9xeop/image/upload/v1540547463/PROJET%202%20NEWTEAM/flag5_2.jpg");
+    background-attachment: fixed ;
     font-family: 'Inconsolata';
     letter-spacing: 1.5px;
 }
 
-/* NAVBAR PC*/
+/* -----------------NAVBAR PC----------------------*/
 
-@media screen and (min-width: 968px){
-.date {
-    display: none;
-}
-.navbar {
-    background-color: #ac1415;
-    height: 100px;
-    border-bottom: 5px solid #ffa91b;
-    letter-spacing: 3px;
-}
-.texte-menu-navbar {
-    color: white;
-}
-.logo_nav {
-    display: flex;
-    /*width: 120%;*/
-    padding-top: 50%;
-}
-.nav-item {
-    font-size: 2em;
-    /*font-weight: bold;*/
-    font-family: 'Electroharmonix';
-}
+@media screen and (min-width: 769px) {
+    .date {
+        display: none;
+    }
 
-.navbar_mobile {
-    display: none;
-}
+    .navbar {
+        background-color: #ac1415;
+        height: 100px;
+        border-bottom: 5px solid #ffa91b;
+        letter-spacing: 3px;
+    }
 
-.navbar a:hover {
-    color: #ffa91b;
+    .texte-menu-navbar {
+        color: white;
+    }
+
+    .logo_nav {
+        display: flex;
+        /*width: 120%;*/
+        padding-top: 50%;
+    }
+
+    .nav-item {
+        font-size: 2em;
+        /*font-weight: bold;*/
+        font-family: 'Electroharmonix';
+    }
+
+    .navbar_mobile {
+        display: none;
+    }
+
+    .navbar a:hover {
+        color: #ffa91b;
+    }
 }
-/*--------*/
+/*------------------------ALL--------------------------------*/
 
 .h1 {
     font-family:'Electroharmonix' ;
 }
+p {
+    color: #000;
+    font-size: 1.3em;
 }
-/* commun shadow */
+/* ------commun shadow-------- */
 
 .form-control {
     box-shadow: 2px 2px 2px #888888;
@@ -102,6 +112,11 @@ body {
 .card.news {
     box-shadow: 2px 2px 2px #888888;
 }
+.titreplayerdetails {
+    text-shadow: 2px 2px 2px #888888;
+}
+
+/*----------------*/
 
 
 
@@ -109,20 +124,28 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.colencount {
+    padding-bottom: 100px;
+}
+.encounter_back {
+    border : none;
+    background-color: transparent;
+}
+.calendar-head {
+    background-color: transparent;
+    border: none;
+}
+.btn-secondary-mod {
+    border-color: #ac1415;
+    color: #ac1415;
+    background-color: white;
+}
+.titreplayerdetails {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
 .card_details {
     max-width: 350px;
     max-height: 350px;
@@ -143,6 +166,7 @@ body {
 .calendar-head{
     font-weight: bold;
     letter-spacing: 1px;
+    font-size: 1.3em;
 }
 .calendar{
     height: 100px;
@@ -274,6 +298,7 @@ div.tab.col-md-6
 .row.justify-content-center
 {
     padding-top: 80px;
+    width: 100%;
 }
 
 .ajout
@@ -285,11 +310,6 @@ div.tab.col-md-6
 {
     padding-top: 40px;
 }
-
-/*.deuxieme.col, .quatrieme.col, .sixieme.col
-{
-    padding-top: 40px;
-}*/
 
 footer {
     background-color: #ac1415;
@@ -324,6 +344,7 @@ footer {
     font-family: 'Inconsolata';
 }
 
+/*----------------------------------------------------------------------------------------*/
 @media screen and (min-width: 601px) and (max-width: 768px) {
 
     /* NAVBAR MOBILE */
@@ -405,7 +426,7 @@ footer {
 
     }
 }
-/*--------*/
+/*----------------------------------------------------------------------------------------------------*/
     @media screen and (max-width: 600px) {
 .carousel.slide {
    display: none;
