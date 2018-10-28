@@ -7,12 +7,12 @@
                 </button>
                 <h4 class="modal-title" id="myModalLabel">Nomduchamps</h4>
             </div>
-            <form action=method="post">
+            <form action="/newteam/modify/{{ playerDetails.id }}" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleFormControl">Nom</label>
                         <input type="hidden" value="{{ playerDetails.id }}" name="id">
-                        <input type="text" class="form-control" name="lastname" id="exampleFormControlTextarea1"
+                        <input type="text" class="form-control" name="firstname" id="exampleFormControlTextarea1"
                                rows="3">
                     </div>
                 </div>

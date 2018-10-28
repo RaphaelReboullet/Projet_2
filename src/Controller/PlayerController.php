@@ -2,10 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
-
  * Date: 10/10/18
  * Time: 09:49
  */
+
 namespace Controller;
 
 use Model\Player;
@@ -23,7 +23,7 @@ class PlayerController extends AbstractController
         'number' => 'setNumber',
         'isactif' => 'setIsactif',
         'portrait' => 'setPortrait',
-        ];
+    ];
 
     public function team()
     {
@@ -61,6 +61,7 @@ class PlayerController extends AbstractController
         }
         return $this->twig->render('Player/add.html.twig');
     }
+
     // TODO : supprimer method del car = modify
     public function del(int $id)
     {
@@ -79,18 +80,22 @@ class PlayerController extends AbstractController
         return $this->twig->render('Accueil/accueil_page.html.twig');
     }
 
-    public function modify(int $id,string $col)
+    public function modify(int $id)
     {
-        if (key_exists($col, self::METHODS)) {
-            $method = self::METHODS[$col];
-        }
         $playerManager = new PlayerManager($this->getPdo());
         $player = $playerManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $player->$method($var);
-            $playerManager->updateStat($player);
-        }
+            foreach (array_keys($_POST) as $key) {
+                if (array_key_exists($key, self::METHODS)) {
+                    $value = $_POST[$key];
+                    $method = self::METHODS[$key];
+
+                    var_dump($method);
+                    $value = $player->$method($value);
+                    $playerManager->updateStat($id, $key, $value);
+                }
+            }
+        }header('Location:/newteam/player/' . $id);
     }
 }
-
