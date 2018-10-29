@@ -28,6 +28,7 @@ $routes = [
     ],
     'Session' => [
         ['login', '/login', ['GET', 'POST']],
+        ['logout', '/newteam/logout', ['GET', 'POST']]
     ]
 ];
 

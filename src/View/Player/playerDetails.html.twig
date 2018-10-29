@@ -59,7 +59,7 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.height }} cm</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                           <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                     <tr>
@@ -98,9 +98,9 @@
         </div>
         <div class="row justify-content-between">
             <div class="col-md-5">
-                  <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
+                {% if session.admin is not empty %}<a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
                      class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
-                  </a>
+                  </a>{% endif %}
                 <div class="col-12 col-md-3 justify-content-right">
                     <p></p>
                 </div>

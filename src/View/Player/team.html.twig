@@ -24,7 +24,7 @@
             </div>
         </div>
             <div class="row justify-content-center">
-            <a href="/newteam/addplayer" class="btn btn-outline-dark ">Ajouter un joueur</a>
+                {% if session.admin is not empty %} <a href="/newteam/addplayer" class="btn btn-outline-dark ">Ajouter un joueur</a>{% endif %}
             </div>
         </div>
 
