@@ -5,7 +5,7 @@
         {% for encounter in encounters %}
             <div class="row justify-content-around">
                 <div class="col encounter">
-                    <div class="card text-center" id="encounter-{{ encounter.id }}">
+                    <div class="card text-center encounter_back" id="encounter-{{ encounter.id }}">
                         <div class="card-header calendar-head">
                             {{ encounter.match_date|date(" d / m / Y ") }}
                         </div>
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer mobile_score text-muted">
+                        <div class="card-footer encounter_back mobile_score text-muted colencount">
                             <div class="row goal_encounter">
                                 <div class="col-1">
                                     {% if date(encounter.match_date) < date() %}
@@ -36,9 +36,9 @@
                                 </div>
                                 <div class="col-12 col-md-4">
                                     {% if date(encounter.match_date) < date() %}
-                                        <p>{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
+                                        <p class="goals">{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
                                     {% else %}
-                                        <p> - </p>
+                                        <p class="goals"> - </p>
                                     {% endif %}
                                 </div>
                                 <div class="col-3">

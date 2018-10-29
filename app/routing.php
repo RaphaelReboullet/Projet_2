@@ -27,6 +27,9 @@ $routes = [
     'Goal' => [
         ['goal', '/encounter/goal', ['GET']],
         ['add', '/encounter/addgoal', ['GET', 'POST']],
+    ],
+    'ContactForm' => [
+        ['formcontroll', '/contactform', ['GET', 'POST']],
     ]
 ];
 
