@@ -67,7 +67,6 @@ class ContactFormController extends AbstractController
     </script>';
             }
 
-                
 
         }
 
