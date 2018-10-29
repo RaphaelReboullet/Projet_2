@@ -18,7 +18,7 @@ class EncounterManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
-    public function insertEncounter(Encounter $encounter): int
+    public function insert(Encounter $encounter): int
     {
         $statement = $this->pdo->prepare("INSERT INTO $this->table (`match_date`, `team_id`) 
                                                     VALUES (:match_date, :team_id)");

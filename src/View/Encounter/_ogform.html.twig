@@ -9,11 +9,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/encounter/edit" method="post">
+            <form action="/encounter/edit" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleFormControl">But(s) des adversaires</label>
-                        <input name="id" type="hidden" id="id">
+                        <input type="hidden" name="id"  id="id">
                         <input type="number" class="form-control" name="opponent_goal"
                                rows="3">
                     </div>
@@ -38,21 +38,20 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/encounter/addgoal" method="post">
+            <form action="/encounter/addgoal" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Sélectionner le joueur</label>
+                        <input name="encounter_id" type="hidden" id="id">
                         <select class="form-control" name="player_id" id="exampleFormControlSelect1">
                             {% for player in players %}
                                 <option value="{{ player.id }}">{{ player.lastname }} {{ player.firstname }}</option>
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControl">But(s)</label>
-                        <input name="id" type="hidden" id="id">
-                        <input type="number" class="form-control" name="goal"
-                               rows="3">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="goal" value="1">
+                        <label class="custom-control-label" for="customCheck1">But</label>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControl">Temps</label>

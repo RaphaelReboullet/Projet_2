@@ -18,10 +18,8 @@ class GoalController extends AbstractController
     {
         $goalManager = new GoalManager($this->getPdo());
         $goals = $goalManager->selectGoal();
-        $playerManager = new PlayerManager($this->getPdo());
-        $players = $playerManager->selectAll();
 
-        return $this->twig->render('Encounter/encounter.html.twig', ['goals' => $goals, 'players' => $players]);
+        return $this->twig->render('Encounter/encounter.html.twig', ['goals' => $goals]);
     }
 
     public function add()
@@ -29,11 +27,12 @@ class GoalController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $goalManager = new GoalManager($this->getPdo());
             $goal = new Goal();
+            $goal->setEncounterId($_POST['encounter_id']);
             $goal->setPlayerId($_POST['player_id']);
             $goal->setGoal($_POST['goal']);
             $goal->setGoalTime($_POST['goal_time']);
             $goalManager->insert($goal);
         }
-        header('Location:/encounter');
+        header('Location:/encounter#encounter-'. $_POST['encounter_id']);
     }
 }

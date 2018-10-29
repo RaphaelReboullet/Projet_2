@@ -5,7 +5,7 @@
         {% for encounter in encounters %}
             <div class="row justify-content-around">
                 <div class="col encounter">
-                    <div class="card text-center">
+                    <div class="card text-center" id="encounter-{{ encounter.id }}">
                         <div class="card-header calendar-head">
                             {{ encounter.match_date|date(" d / m / Y ") }}
                         </div>

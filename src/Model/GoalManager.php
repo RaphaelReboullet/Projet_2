@@ -17,7 +17,7 @@ class GoalManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
-    public function addGoal(Goal $goal): int
+    public function insert(Goal $goal): int
     {
         $statement = $this->pdo->prepare("INSERT INTO $this->table (`encounter_id`, `player_id`, `goal`, `goal_time`) 
                                                     VALUES (:encounter_id, :player_id, :goal, :goal_time)");

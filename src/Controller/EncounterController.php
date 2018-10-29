@@ -11,6 +11,7 @@ namespace Controller;
 use Model\TeamManager;
 use Model\Encounter;
 use Model\EncounterManager;
+use Model\PlayerManager;
 
 class EncounterController extends AbstractController
 {
@@ -20,8 +21,12 @@ class EncounterController extends AbstractController
         $encounters = $encounterManager->selectEncounter();
         $teamManager = new TeamManager($this->getPdo());
         $teams = $teamManager->selectTeam();
+        $playerManager = new PlayerManager($this->getPdo());
+        $players = $playerManager->selectAll();
 
-        return $this->twig->render('Encounter/encounter.html.twig', ['encounters' => $encounters, 'teams' => $teams]);
+
+        return $this->twig->render('Encounter/encounter.html.twig', ['encounters' => $encounters,
+            'teams' => $teams, 'players' => $players]);
     }
 
     public function add()
@@ -36,15 +41,14 @@ class EncounterController extends AbstractController
         header('Location:/encounter');
     }
 
-    public function edit(int $id): int
+    public function edit(): string
     {
-        $encounterManager = new EncounterManager($this->getPdo());
-        $encounter = $encounterManager->selectOneById($id);
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $encounterManager = new EncounterManager($this->getPdo());
+            $encounter = $encounterManager->selectOneById($_POST['id']);
             $encounter->setOpponentGoal($_POST['opponent_goal']);
             $encounterManager->update($encounter);
         }
-        return $this->twig->render('Encounter/encounter.html.twig', ['encounter' => $encounter ]);
+        header('Location:/encounter#encounter-' . $_POST['id']);
     }
 }

@@ -76,7 +76,6 @@ abstract class AbstractManager
               FROM ' . $this->table . ' 
               LEFT JOIN team AS t ON ' . $this->table . '.team_id = t.id 
               LEFT JOIN goal AS g ON ' . $this->table . '.id = g.encounter_id 
-                LEFT JOIN player AS p ON g.player_id = p.id
               GROUP BY ' . $this->table . '.id
               ORDER BY match_date;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
