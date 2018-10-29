@@ -9,6 +9,11 @@
 
         <div class="caracteristiques row justify-content-center">
             <h1><span class="badge badge-secondary">Caractéristiques</span></h1>
+            {% for key, value in playerDetails|cast_to_array %}
+                <td>{{ value.0 }}</td>
+            {% endfor %}
+
+
         </div>
 
 
@@ -28,11 +33,12 @@
                         </div>
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.firstname }}</th>
-                            <!-- Button trigger modal -->
+                        <!-- Button trigger modal -->
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="firstname">
                                 Modifier
-                            </button></a>
+                            </button>
                         </th>
                     </tr>
                     <tr>
@@ -42,7 +48,8 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.lastname }}</th>
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="lastname">
                                 Modifier
                             </button>
                         </th>
@@ -54,7 +61,8 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.birthdate|date(" d / m / Y ") }}</th>
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="birthdate">
                                 Modifier
                             </button>
                         </th>
@@ -66,7 +74,8 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.height }} cm</th>
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="height">
                                 Modifier
                             </button>
                         </th>
@@ -78,7 +87,8 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.weight }} kg</th>
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="weight">
                                 Modifier
                             </button>
                         </th>
@@ -90,7 +100,8 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.position }}</th>
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="position">
                                 Modifier
                             </button>
                         </th>
@@ -102,7 +113,8 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.number }}</th>
                         <th>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#playerModal" data-attribute="number">
                                 Modifier
                             </button>
                         </th>
@@ -116,11 +128,11 @@
                    class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
                 </a>
             </div>
-                <div class="col-md-3 justify-content-right">
-                    <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
-                </div>
+            <div class="col-md-3 justify-content-right">
+                <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
             </div>
         </div>
+    </div>
     </div>
     {% include 'Player/_modal_form.html.twig' %}
     </body>
@@ -139,6 +151,16 @@
                 }
             }
         );
+        $(document).ready(function () {
+            $('#playerModal').on('show.bs.modal', function (event) {
+                let button = $(event.relatedTarget); // Button that triggered the modal
+console.log(event.relatedTarget);
+                let inputName = button.data('attribute');// Extract info from data-* attributes
+                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                $("#inputAttribute").attr("name", inputName);
+            })
+        });
 
     </script>
 {% endblock %}

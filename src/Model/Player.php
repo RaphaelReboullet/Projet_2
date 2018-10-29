@@ -10,25 +10,25 @@ namespace Model;
 
 class Player
 {
-    private $id;
+    public $id;
 
-    private $firstname;
+    public$firstname;
 
-    private $lastname;
+    public $lastname;
 
-    private $birthdate;
+    public $birthdate;
 
-    private $height;
+    public $height;
 
-    private $weight;
+    public $weight;
 
-    private $position;
+    public $position;
 
-    private $number;
+    public $number;
 
-    private $isActif;
+    public $isactif;
 
-    private $portrait;
+    public $portrait;
 
     public function getId() :int
     {
@@ -115,13 +115,13 @@ class Player
 
     public function getIsactif() :bool
     {
-        return $this->isActif;
+        return $this->isactif;
     }
 
-    public function setIsactif($isActif) :bool
+    public function setIsactif($isactif) :bool
     {
-        $this->isActif = $isActif;
-        return $isActif;
+        $this->isactif = $isactif;
+        return $isactif;
     }
 
     /**
