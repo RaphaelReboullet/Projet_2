@@ -73,6 +73,9 @@ body {
     color: #000;
     font-size: 1.3em;
 }
+.slide {
+    height: 700px;
+}
 /* ------commun shadow-------- */
 
 .form-control {
@@ -507,7 +510,7 @@ footer {
 
         /* FOOTER MOBILE */
         .texte-menu-footer {
-            font-size: 0.9em;
+            font-size: 0.7em;
         }
 
         .ikon {
