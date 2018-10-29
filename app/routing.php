@@ -22,7 +22,15 @@ $routes = [
     ],
     'Encounter' => [
         ['encounter', '/encounter', ['GET']],
-        ['addEncounter', '/encounter/add', ['GET', 'POST']],
+        ['add', '/encounter/add', ['GET', 'POST']],
+        ['edit', '/encounter/edit', ['GET', 'POST']],
+    ],
+    'Goal' => [
+        ['goal', '/encounter/goal', ['GET']],
+        ['add', '/encounter/addgoal', ['GET', 'POST']],
+    ],
+    'ContactForm' => [
+        ['formcontroll', '/contactform', ['GET', 'POST']],
     ]
 ];
 
