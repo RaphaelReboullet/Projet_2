@@ -5,26 +5,21 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Nomduchamps</h4>
             </div>
             <form action="/newteam/modify/{{ playerDetails.id }}" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="exampleFormControl">Nom</label>
+                        <label for="exampleFormControl">Vous pouvez rentrer la nouvelle valeur.</label>
                         <input type="hidden" value="{{ playerDetails.id }}" name="id">
                         <input type="text" class="form-control" name="" id="inputAttribute"
                                rows="3">
                     </div>
                 </div>
-
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-
-</script>

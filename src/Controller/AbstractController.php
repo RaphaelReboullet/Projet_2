@@ -43,7 +43,7 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new \Twig_Extension_Debug());
-        $this->twig->addFilter( new \Twig_SimpleFilter('cast_to_array', function ($stdClassObject) {
+        $this->twig->addFilter(new \Twig_SimpleFilter('cast_to_array', function ($stdClassObject) {
             $response = array();
             foreach ($stdClassObject as $key => $value) {
                 $response[] = array($key, $value);

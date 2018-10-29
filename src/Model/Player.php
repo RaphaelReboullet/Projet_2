@@ -12,7 +12,7 @@ class Player
 {
     public $id;
 
-    public$firstname;
+    public $firstname;
 
     public $lastname;
 

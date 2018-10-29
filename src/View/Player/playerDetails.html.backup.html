@@ -1,0 +1,164 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<body>
+
+
+<div class="container">
+
+    <div class="caracteristiques row justify-content-center">
+        <h1><span class="badge badge-secondary">Caractéristiques</span></h1>
+        {% for key, value in playerDetails|cast_to_array %}
+        <td>{{ value.0 }}</td>
+        {% endfor %}
+
+
+    </div>
+
+
+    <div class="row justify-content-around d-flex align-content-center flex-wrap">
+        <div class="col-md-5-lg-4 pd-4">
+            <div class="card playerdetail">
+                <img class="card-img-top" src="{{ playerDetails.portrait }}" alt="Card image cap">
+            </div>
+        </div>
+
+        <div class="tab col-md-6 d-flex align-content-center flex-wrap">
+
+            <table class="table table-striped table-dark">
+                <tr>
+                    <div class="col md-1">
+                        <th>Prénom</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.firstname }}</th>
+                    <!-- Button trigger modal -->
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="firstname">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <div class="col md-1">
+                        <th>Nom</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.lastname }}</th>
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="lastname">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <div class="col md-1">
+                        <th>Date de naissance</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.birthdate|date(" d / m / Y ") }}</th>
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="birthdate">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <div class="col md-1">
+                        <th>Taille</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.height }} cm</th>
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="height">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <div class="col md-1">
+                        <th>Poids</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.weight }} kg</th>
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="weight">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <div class="col md-1">
+                        <th>Poste</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.position }}</th>
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="position">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <div class="col md-1">
+                        <th>Numéro</th>
+                    </div>
+                    <div class="col md-3"></div>
+                    <th>{{ playerDetails.number }}</th>
+                    <th>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#playerModal" data-attribute="number">
+                            Modifier
+                        </button>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-md-5">
+            <a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
+               class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
+            </a>
+        </div>
+        <div class="col-md-3 justify-content-right">
+            <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
+        </div>
+    </div>
+</div>
+</div>
+{% include 'Player/_modal_form.html.twig' %}
+</body>
+
+{% endblock %}
+{% block javascript  %}
+{{ parent() }}
+<script type="text/javascript">
+    document.getElementById("delete").addEventListener("click",
+        function(event){ event.preventDefault();
+            if (confirm("Voulez-vous vraiment supprimer ce joueur ? ") === true) {
+                alert("{{ playerDetails.firstname ~ ' ' ~ playerDetails.lastname }} a été supprimé de l'effectif");
+                location.replace("/newteam/delete/{{ playerDetails.id }}");
+            } else {
+                alert("{{ playerDetails.firstname ~ ' ' ~ playerDetails.lastname }} vous remercie de votre confiance");
+            }
+        }
+    );
+    $(document).ready(function () {
+        $('#playerModal').on('show.bs.modal', function (event) {
+            let button = $(event.relatedTarget); // Button that triggered the modal
+            let inputName = button.data('attribute');// Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            $("#inputAttribute").attr("name", inputName);
+        })
+    });
+
+</script>
+{% endblock %}
