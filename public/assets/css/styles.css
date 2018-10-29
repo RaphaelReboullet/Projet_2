@@ -1,3 +1,4 @@
+/* --------------- FONTS --------------- */
 @font-face {
     font-family: 'Inconsolata';
     src: url('Inconsolata-Regular.ttf') format('truetype');
@@ -18,38 +19,149 @@
     font-style: normal;
 }
 body {
-    background-image : url("https://res.cloudinary.com/dnpr9xeop/image/upload/v1539790670/PROJET%202%20NEWTEAM/japan-grunge-flag-header_2000_0_8.jpg");
-    background-attachment: fixed;
+    /*background-image : url("https://res.cloudinary.com/dnpr9xeop/image/upload/v1539790670/PROJET%202%20NEWTEAM/japan-grunge-flag-header_2000_0_8.jpg");*/
+    background-image: url("https://res.cloudinary.com/dnpr9xeop/image/upload/v1540547463/PROJET%202%20NEWTEAM/flag5_2.jpg");
+    background-attachment: fixed ;
     font-family: 'Inconsolata';
     letter-spacing: 1.5px;
 }
+
+/* -----------------NAVBAR PC----------------------*/
+
+@media screen and (min-width: 769px) {
+    .date {
+        display: none;
+    }
+
+    .navbar {
+        background-color: #ac1415;
+        height: 100px;
+        border-bottom: 5px solid #ffa91b;
+        letter-spacing: 3px;
+    }
+
+    .texte-menu-navbar {
+        color: white;
+    }
+
+    .logo_nav {
+        display: flex;
+        /*width: 120%;*/
+        padding-top: 50%;
+    }
+
+    .nav-item {
+        font-size: 2em;
+        /*font-weight: bold;*/
+        font-family: 'Electroharmonix';
+    }
+
+    .navbar_mobile {
+        display: none;
+    }
+
+    .navbar a:hover {
+        color: #ffa91b;
+    }
+}
+/*------------------------ALL--------------------------------*/
+
+.h1 {
+    font-family:'Electroharmonix' ;
+}
+.goals {
+    color: #000;
+    font-size: 1.3em;
+}
+.slide {
+    height: 700px;
+}
+/* ------commun shadow-------- */
+
+.form-control {
+    box-shadow: 2px 2px 2px #888888;
+}
 .navbar {
-    background-color: #ac1415;
-    height: 100px;
-    border-bottom: 5px solid #ffa91b;
-    letter-spacing: 3px;
+    box-shadow: 2px 2px 2px #888888;
 }
 .texte-menu-navbar {
-    color: white;
+    text-shadow: 2px 2px 2px #888888;
 }
-.logo_nav {
-    display: flex;
-    /*width: 120%;*/
-    padding-top: 50%;
+.card-img-top {
+    box-shadow: 2px 2px 2px #888888;
 }
-.nav-item {
-    font-size: 2em;
-    /*font-weight: bold;*/
-    font-family: 'Electroharmonix';
+.goal_encounter {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card-header {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card-title {
+    text-shadow: 2px 2px 2px #888888;
+}
+.titrepagequipe {
+    text-shadow: 2px 2px 2px #888888;
+}
+.card.rosterteam {
+    box-shadow: 2px 2px 2px #888888;
+}
+.btn-outline-danger {
+    box-shadow: 2px 2px 2px #888888;
+}
+.card-title-player {
+    text-shadow: 2px 2px 2px #888888;
+    padding-top: 10px;
+}
+.card.news {
+    box-shadow: 2px 2px 2px #888888;
+}
+.titreplayerdetails {
+    text-shadow: 2px 2px 2px #888888;
 }
 
+/*----------------*/
+
+
+
+
+
+
+
+.colencount {
+    padding-bottom: 100px;
+}
+.encounter_back {
+    border : none;
+    background-color: transparent;
+}
+.calendar-head {
+    background-color: transparent;
+    border: none;
+}
+.btn-secondary-mod {
+    border-color: #ac1415;
+    color: #ac1415;
+    background-color: white;
+}
+.titreplayerdetails {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+.card_details {
+    max-width: 350px;
+    max-height: 350px;
+}
 .rosterteam
 {
     width: 15rem;
     padding: 10px;
     margin: 20px;
 }
-
+.contact {
+    padding: 50px;
+  }
 /*encounter*/
 .encounter{
     padding: 20px;
@@ -57,6 +169,7 @@ body {
 .calendar-head{
     font-weight: bold;
     letter-spacing: 1px;
+    font-size: 1.3em;
 }
 .calendar{
     height: 100px;
@@ -70,7 +183,7 @@ a.btn.btn-outline-danger
 {
     font-size: 1rem;
     padding: 0px;
-    margin-top: 25px;
+    margin-top: 15px;
     border-color: #ac1415;
     color: #ac1415;
 }
@@ -81,6 +194,7 @@ button.btn.btn-outline-dark
     border-color: #ac1415;
     color: #ac1415;
     background-color: white;
+    box-shadow: 2px 2px 2px #888888;
 }
 
 a.btn.btn-outline-dark:hover, button.btn.btn-primary:hover, a.btn.btn-primary:hover,
@@ -101,26 +215,36 @@ div.card.rosterteam
     border-color : #ac1415;
     border-width : 7px;
 }
-
-.card.
-
-.navbar a:hover
-{
-    color: #ffa91b;
-}
-
 div.card-body
+ {
+     margin: 0px;
+     padding-left: 0px;
+     padding-right: 0px;
+     height: 220px;
+ }
+div.card-body-encounter
 {
     margin: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    height: 250px;
 }
-
+.mobile_score {
+    padding-top: 30px;
+}
+.card-body-team
+{
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 80px;
+}
 h5.card-title
 {
     margin-left: 15px;
     margin-right: 15px;
     font-weight: bold;
+    font-size: 1.5em;
 }
 
 
@@ -160,7 +284,7 @@ div.tab.col-md-6
     padding: 0px;
 }
 
-.ajouter,.form
+.ajouter.form
 {
     font-weight: bold;
 }
@@ -174,6 +298,7 @@ div.tab.col-md-6
 .row.justify-content-center
 {
     padding-top: 80px;
+    width: 100%;
 }
 
 .ajout
@@ -182,11 +307,6 @@ div.tab.col-md-6
 }
 
 .form
-{
-    padding-top: 40px;
-}
-
-.deuxieme.col, .quatrieme.col, .sixieme.col
 {
     padding-top: 40px;
 }
@@ -213,4 +333,208 @@ footer {
 {
     padding-top: 40px;
 }
+.goal {
+    padding-top: 0px;
+    font-size: 3em;
+    font-weight: bold;
+}
+.goal_encounter {
+    justify-content: center;
+    font-size: 3em;
+    font-family: 'Inconsolata';
+}
 
+/*----------------------------------------------------------------------------------------*/
+@media screen and (min-width: 601px) and (max-width: 768px) {
+
+    /* NAVBAR MOBILE */
+    .navbar_mobile {
+        background-color: #ac1415;
+        height: 80px;
+        border-bottom: 5px solid #ffa91b;
+        letter-spacing: 3px;
+    }
+
+    .logoburger {
+        width: 60px;
+    }
+
+    .bouton-burger {
+        justify-content: end;
+    }
+
+    .nav-item {
+
+        font-family: 'Electroharmonix';
+        background-color: #ac1415;
+        z-index: 1000;
+    }
+
+    .navbar-toggler-icon {
+        border: none;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .texte-menu-navbar {
+        color: white;
+    }
+
+    .logo_nav {
+        display: none;
+    }
+    .date {
+        display: none;
+    }
+    /*--------*/
+
+    .titrepagequipe {
+        font-size: 1.7em;
+    }
+
+    h5.card-title
+    {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    div.card-body-encounter
+    {
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        height: 180px;
+    }
+
+
+
+    /* FOOTER MOBILE */
+    .texte-menu-footer {
+        font-size: 0.9em;
+    }
+
+    .ikon {
+        width: 40px;
+        height: 40px;
+
+    }
+}
+/*----------------------------------------------------------------------------------------------------*/
+    @media screen and (max-width: 600px) {
+.carousel.slide {
+   display: none;
+}
+        .date {
+            padding-top: 20px;
+            justify-content: center;
+        }
+        .date_enc {
+            width:105px;
+            height:75px;
+        }
+        /* NAVBAR MOBILE */
+        .navbar_mobile {
+            background-color: #ac1415;
+            height: 80px;
+            border-bottom: 5px solid #ffa91b;
+            letter-spacing: 3px;
+        }
+
+        .logoburger {
+            width: 60px;
+        }
+
+        .bouton-burger {
+            justify-content: end;
+        }
+
+        .nav-item {
+
+            font-family: 'Electroharmonix';
+            background-color: #ac1415;
+            z-index: 1000;
+        }
+
+        .navbar-toggler-icon {
+            border: none;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .texte-menu-navbar {
+            color: white;
+        }
+
+        .logo_nav {
+            display: none;
+        }
+        .nav-link {
+            background-color: #ac1415;
+        }
+        /*--------*/
+
+        .titrepagequipe {
+            font-size: 1.7em;
+        }
+
+        h5.card-title
+        {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        div.card-body-encounter
+        {
+            margin: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            height: 180px;
+        }
+
+        /* FOOTER MOBILE */
+        .texte-menu-footer {
+            font-size: 0.7em;
+        }
+
+        .ikon {
+            width: 40px;
+            height: 40px;
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
