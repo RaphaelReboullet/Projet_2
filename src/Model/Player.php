@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mcnitch
+ * User: mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
  * Date: 10/10/18
  * Time: 10:03
  */
@@ -39,6 +39,15 @@ class Player
     }
 
     /**
+     * @param int $id
+     * @return Player
+     */
+    public function setId(int $id) :Player
+    {
+        $this->id = $id;
+        return $this;
+    }
+    /**
      * @return string
      */
     public function getFirstname() :string
@@ -48,12 +57,12 @@ class Player
 
     /**
      * @param string $firstname
-     * @return string
+     * @return Player
      */
-    public function setFirstname(string $firstname) :string
+    public function setFirstname(string $firstname) :Player
     {
-
-        return $this->firstname = $firstname;
+        $this->firstname = $firstname;
+        return $this;
     }
 
     /**
@@ -66,12 +75,12 @@ class Player
 
     /**
      * @param string $lastname
-     * @return string
+     * @return Player
      */
-    public function setLastname(string $lastname) :string
+    public function setLastname(string $lastname) :Player
     {
-
-        return $this->lastname = $lastname;
+        $this->lastname = $lastname;
+        return $this;
     }
 
     /**
@@ -84,12 +93,12 @@ class Player
 
     /**
      * @param string $birthdate
-     * @return string
+     * @return Player
      */
-    public function setBirthdate(string $birthdate) :string
+    public function setBirthdate(string $birthdate) :Player
     {
         $this->birthdate = date('Y-m-d', strtotime(str_replace('/', '-', $birthdate)));
-        return $this->birthdate;
+        return $this;
     }
 
     /**
@@ -102,12 +111,12 @@ class Player
 
     /**
      * @param string $height
-     * @return int
+     * @return Player
      */
-    public function setHeight(string $height) :int
+    public function setHeight(string $height) :Player
     {
-
-        return $this->height = $height;
+        $this->height = $height;
+        return $this;
     }
 
     /**
@@ -120,11 +129,12 @@ class Player
 
     /**
      * @param string $weight
-     * @return int
+     * @return Player
      */
-    public function setWeight(string $weight) :int
+    public function setWeight(string $weight) :Player
     {
-        return $this->weight = $weight;
+        $this->weight = $weight;
+        return $this;
     }
 
     /**
@@ -137,11 +147,12 @@ class Player
 
     /**
      * @param string $position
-     * @return string
+     * @return Player
      */
-    public function setPosition(string $position) :string
+    public function setPosition(string $position) :Player
     {
-        return $this->position = $position;
+        $this->position = $position;
+        return $this;
     }
 
     /**
@@ -154,12 +165,12 @@ class Player
 
     /**
      * @param int $number
-     * @return int
+     * @return Player
      */
-    public function setNumber(int $number) :int
+    public function setNumber(int $number) :Player
     {
-
-        return $this->number = $number;
+        $this->number = $number;
+        return $this;
     }
 
     /**
@@ -171,18 +182,19 @@ class Player
     }
 
     /**
-     * @param $isactif
-     * @return bool
+     * @param int $isactif
+     * @return Player
      */
-    public function setIsactif($isactif) :bool
+    public function setIsactif(int $isactif) :Player
     {
-        return $this->isactif = $isactif;
+        $this->isactif = $isactif;
+        return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getPortrait()
+    public function getPortrait() :string
     {
         return $this->portrait;
     }
@@ -191,8 +203,9 @@ class Player
      * @param $portrait
      * @return mixed
      */
-    public function setPortrait($portrait)
+    public function setPortrait(string $portrait) :Player
     {
-        return $this->portrait = $portrait;
+        $this->portrait = $portrait;
+        return $this;
     }
 }

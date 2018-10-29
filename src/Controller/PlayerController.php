@@ -11,20 +11,30 @@ namespace Controller;
 use Model\Player;
 use Model\PlayerManager;
 
+/**
+ * Class PlayerController
+ * @package Controller
+ */
 class PlayerController extends AbstractController
 {
     const METHODS = [
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
-        'birthdate' => 'setBirthdate',
-        'height' => 'setHeight',
-        'weight' => 'setWeight',
-        'position' => 'setPosition',
-        'number' => 'setNumber',
-        'isactif' => 'setIsactif',
-        'portrait' => 'setPortrait',
+        'firstname' => ['setFirstname', 'getFirstname'],
+        'lastname' => ['setLastname', 'getLastname'],
+        'birthdate' => ['setBirthdate', 'getBirthdate'],
+        'height' => ['setHeight', 'getHeight'],
+        'weight' => ['setWeight', 'getWeight'],
+        'position' => ['setPosition', 'getPosition'],
+        'number' => ['setNumber', 'getNumber'],
+        'isactif' => ['setIsactif', 'getIsactif'],
+        'portrait' => ['setPortrait', 'getPortrait'],
     ];
 
+    /**
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function team()
     {
         $playerManager = new PlayerManager($this->getPdo());
@@ -33,6 +43,13 @@ class PlayerController extends AbstractController
         return $this->twig->render('Player/team.html.twig', ['players' => $players]);
     }
 
+    /**
+     * @param int $id
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function playerDetails(int $id)
     {
         $playerManager = new PlayerManager($this->getPdo());
@@ -40,6 +57,12 @@ class PlayerController extends AbstractController
         return $this->twig->render('Player/playerDetails.html.twig', ['playerDetails' => $player]);
     }
 
+    /**
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function add()
     {
 
@@ -62,24 +85,37 @@ class PlayerController extends AbstractController
         return $this->twig->render('Player/add.html.twig');
     }
 
-    // TODO : supprimer method del car = modify
+    /**
+     * @param int $id
+     */
     public function del(int $id)
     {
         $playerManager = new PlayerManager($this->getPdo());
-        $player = $playerManager->selectOneById($id);
+        $playerManager->selectOneById($id);
+        $player = new Player();
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $player->setId($id);
             $player->setIsactif(0);
             $playerManager->update($player);
         }
         header('Location:/newteam');
     }
 
+    /**
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function welcome()
     {
         return $this->twig->render('Accueil/accueil_page.html.twig');
     }
 
+    /**
+     * @param int $id
+     */
     public function modify(int $id)
     {
         $playerManager = new PlayerManager($this->getPdo());
@@ -89,10 +125,9 @@ class PlayerController extends AbstractController
             foreach (array_keys($_POST) as $key) {
                 if (array_key_exists($key, self::METHODS)) {
                     $value = $_POST[$key];
-                    $method = self::METHODS[$key];
-
-                    var_dump($method);
-                    $value = $player->$method($value);
+                    $setter = self::METHODS[$key][0];
+                    $getter = self::METHODS[$key][1];
+                    $value = $player->$setter($value)->$getter();
                     $playerManager->updateStat($id, $key, $value);
                 }
             }

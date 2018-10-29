@@ -8,10 +8,18 @@
 
 namespace Model;
 
+/**
+ * Class PlayerManager
+ * @package Model
+ */
 class PlayerManager extends AbstractManager
 {
     const TABLE = 'player';
 
+    /**
+     * PlayerManager constructor.
+     * @param \PDO $pdo
+     */
     public function __construct(\PDO $pdo)
     {
         parent::__construct(self::TABLE, $pdo);
@@ -43,6 +51,9 @@ class PlayerManager extends AbstractManager
         }
     }
 
+    /**
+     * @param int $id
+     */
     public function delete(int $id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -51,7 +62,11 @@ class PlayerManager extends AbstractManager
             $statement->execute();
         }
     }
-//TODO : update dynamique param = obj Player, string $method
+
+    /**
+     * @param Player $player
+     * @return int
+     */
     public function update(Player $player):int
     {
         // prepared request
@@ -62,11 +77,14 @@ class PlayerManager extends AbstractManager
         return $statement->execute();
     }
 
-    public function updateStat($id, $key, $value)
+    /**
+     * @param int $id
+     * @param string $key
+     * @param string $value
+     * @return bool
+     */
+    public function updateStat(int $id,string $key,string $value)
     {
-        echo var_dump($key);
-        echo var_dump($value);
-        // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET `$key` = :$key WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->bindValue($key, $value, \PDO::PARAM_STR);
