@@ -7,15 +7,13 @@
 
     <div class="container">
 
-        <div class="caracteristiques row justify-content-center">
-            <h1><span class="badge badge-secondary">Caractéristiques</span></h1>
-        </div>
+            <h1 class="titreplayerdetails">Caractéristiques</h1>
 
 
         <div class="row justify-content-around d-flex align-content-center flex-wrap">
             <div class="col-11 col-md-5 col-lg-4 pd-4">
                 <div class="card playerdetail">
-                    <img class="card-img-top" src="{{ playerDetails.portrait }}" alt="Card image cap">
+                    <img class="card-img-top-det card_details" src="{{ playerDetails.portrait }}" alt="Card image cap">
                 </div>
             </div>
 
@@ -29,7 +27,7 @@
                         <div class="col md-4"></div>
                         <th>{{ playerDetails.firstname }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-secondary-mod btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                     <tr>
@@ -39,7 +37,7 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.lastname }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-secondary-mod btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                     <tr>
@@ -49,7 +47,7 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.birthdate|date(" d / m / Y ") }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-secondary-mod btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                     <tr>
@@ -59,7 +57,10 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.height }} cm</th>
                         <th>
-                           <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+
+
+                            <button type="button" class="btn-secondary-mod btn-sm btn-block">Modifier</button>
+
                         </th>
                     </tr>
                     <tr>
@@ -69,7 +70,7 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.weight }} kg</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-secondary-mod btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                     <tr>
@@ -79,7 +80,7 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.position }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-secondary-mod btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                     <tr>
@@ -89,7 +90,7 @@
                         <div class="col md-3"></div>
                         <th>{{ playerDetails.number }}</th>
                         <th>
-                            <button type="button" class="btn btn-secondary btn-sm btn-block">Modifier</button>
+                            <button type="button" class="btn btn-secondary-mod btn-sm btn-block">Modifier</button>
                         </th>
                     </tr>
                 </table>

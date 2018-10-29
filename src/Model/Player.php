@@ -38,7 +38,7 @@ class Player
 
     public function getFirstname() :string
     {
-        return $this->firstname;
+        return ucfirst($this->firstname);
     }
 
     public function setFirstname($firstname) :string
@@ -49,7 +49,7 @@ class Player
 
     public function getLastname() :string
     {
-        return $this->lastname;
+        return strtoupper($this->lastname);
     }
 
     public function setLastname($lastname) :string

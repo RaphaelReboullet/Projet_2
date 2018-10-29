@@ -86,11 +86,10 @@ abstract class AbstractManager
 
     public function selectEncounter(): array
     {
-        return $this->pdo->query('SELECT match_date, team, flag, opponent_goal, COUNT(goal) AS goal
+        return $this->pdo->query('SELECT encounter.id, match_date, team, `flag`, `opponent_goal`, COUNT(goal) AS goal
               FROM ' . $this->table . ' 
               LEFT JOIN team AS t ON ' . $this->table . '.team_id = t.id 
               LEFT JOIN goal AS g ON ' . $this->table . '.id = g.encounter_id 
-                LEFT JOIN player AS p ON g.player_id = p.id
               GROUP BY ' . $this->table . '.id
               ORDER BY match_date;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
@@ -99,5 +98,13 @@ abstract class AbstractManager
     {
         return $this->pdo->query('SELECT id, team FROM ' . $this->table . ' 
                                             ORDER BY team;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
+
+    public function selectGoal(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table . '
+                                            LEFT JOIN encounter AS e ON goal.encounter_id = e.id
+                                            LEFT JOIN player AS p ON goal.player_id = p.id
+                                            ORDER BY goal_time;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }

@@ -18,7 +18,7 @@ class EncounterManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
-    public function insertEncounter(Encounter $encounter): int
+    public function insert(Encounter $encounter): int
     {
         $statement = $this->pdo->prepare("INSERT INTO $this->table (`match_date`, `team_id`) 
                                                     VALUES (:match_date, :team_id)");
@@ -28,5 +28,17 @@ class EncounterManager extends AbstractManager
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
         }
+    }
+
+    public function update(Encounter $encounter):int
+    {
+
+        // prepared request
+        $statement = $this->pdo->prepare("UPDATE $this->table SET `opponent_goal` = :opponent_goal WHERE id=:id");
+        $statement->bindValue('id', $encounter->getId(), \PDO::PARAM_INT);
+        $statement->bindValue('opponent_goal', $encounter->getOpponentGoal(), \PDO::PARAM_STR);
+
+
+        return $statement->execute();
     }
 }

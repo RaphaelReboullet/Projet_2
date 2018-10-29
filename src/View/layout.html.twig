@@ -46,7 +46,7 @@
                 <a class="nav-link ml-3 mr-4 texte-menu-navbar" href="/encounter">CALENDRIER</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-4 texte-menu-navbar" href="/contact">CONTACT</a>
+                <a class="nav-link mr-4 texte-menu-navbar" href="/contactform">CONTACT</a>
             </li>
         </ul>
     </div>
@@ -54,8 +54,8 @@
 </nav>
 
     <nav class="navbar_mobile navbar-light navbar-expand-lg row no-gutters justify-content-between">
-        <a class="navbar-brand" href="#">
-            <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539183517/PROJET%202%20NEWTEAM/logo_japon.png" alt="logoburger" class="logoburger">
+        <a class="navbar-brand" href="/">
+           <img src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539183517/PROJET%202%20NEWTEAM/logo_japon.png" alt="logoburger" class="logoburger">
         </a>
         <button class="navbar-toggler" id="bouton-burger" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,16 +63,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="news">INFOS</a>
+                    <a class="nav-link text-center" href="/">INFOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="newteam">EQUIPE</a>
+                    <a class="nav-link text-center" href="/newteam">EQUIPE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="encounter">CALENDRIER</a>
+                    <a class="nav-link text-center" href="/encounter">CALENDRIER</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="contact">CONTACT</a>
+                    <a class="nav-link text-center" href="/contactform">CONTACT</a>
                 </li>
                 {% if session.admin is not empty %}
                     <a id="logout" href="newteam/logout"
@@ -82,8 +82,6 @@
         </div>
 
     </nav>
-
-
 
 {% block content %}{% endblock %}
 

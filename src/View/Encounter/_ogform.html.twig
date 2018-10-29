@@ -1,0 +1,69 @@
+{# form ogoal #}
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter un score</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/encounter/edit" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControl">But(s) des adversaires</label>
+                        <input type="hidden" name="id"  id="id">
+                        <input type="number" class="form-control" name="opponent_goal"
+                               rows="3">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondery" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-outline-dark">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{# form goal #}
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter un score</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/encounter/addgoal" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Sélectionner le joueur</label>
+                        <input name="encounter_id" type="hidden" id="id">
+                        <select class="form-control" name="player_id" id="exampleFormControlSelect1">
+                            {% for player in players %}
+                                <option value="{{ player.id }}">{{ player.lastname }} {{ player.firstname }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="goal" value="1">
+                        <label class="custom-control-label" for="customCheck1">But</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControl">Temps</label>
+                        <input type="time" class="form-control" name="goal_time"
+                               rows="3">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondery" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-outline-dark">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
