@@ -62,8 +62,10 @@ class PlayerManager extends AbstractManager
         return $statement->execute();
     }
 
-    public function updateStat($id, string $key, $value)
+    public function updateStat($id, $key, $value)
     {
+        echo var_dump($key);
+        echo var_dump($value);
         // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET `$key` = :$key WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
