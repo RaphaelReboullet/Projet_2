@@ -3,10 +3,9 @@
 {% block content %}
     <div class="encounter container">
         {% for encounter in encounters %}
-
             <div class="row justify-content-around">
                 <div class="col encounter">
-                    <div class="card text-center encounter_back">
+                    <div class="card text-center encounter_back" id="encounter-{{ encounter.id }}">
                         <div class="card-header calendar-head">
                             {{ encounter.match_date|date(" d / m / Y ") }}
                         </div>
@@ -20,13 +19,20 @@
                                 <div class="col-5 col-md-3">
                                     <h5 class="card-title">{{ encounter.team }}</h5>
                                     <img class="card-img-top flag" src="{{ encounter.flag }}" alt="Country flag">
-
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer encounter_back mobile_score text-muted colencount">
                             <div class="row goal_encounter">
-                                <div class="col-4">
+                                <div class="col-1">
+                                    {% if date(encounter.match_date) < date() %}
+                                        <button type="button" class="btn btn-outline-dark add-goal" data-id="{{ encounter.id }}">
+                                            +
+                                        </button>
+                                    {% endif %}
+                                </div>
+                                <div class="col-3">
+
                                 </div>
                                 <div class="col-12 col-md-4">
                                     {% if date(encounter.match_date) < date() %}
@@ -35,28 +41,29 @@
                                         <p class="goals"> - </p>
                                     {% endif %}
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
+                                </div>
+                                <div class="col-1">
+                                    {% if date(encounter.match_date) < date() %}
+                                        <button type="button" class="btn btn-outline-dark edit-ogoal" data-id="{{ encounter.id }}">
+                                            +
+                                        </button>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         {% endfor %}
         <div class="row justify-content-around">
             <div class="col-8 col-md-3">
-                <button type="submit" class="btn btn-outline-dark btn-block">Ajouter un match</button>
-            </div>
-            <div class="col-12 col-md-1">
-                <p></p>
-            </div>
-            <div class="col-8 col-md-3">
-                <button type="submit" class="btn btn-outline-dark btn-block">Ajouter un score</button>
-
+                <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addEncounter">
+                    Ajouter une rencontre
+                </button>
             </div>
         </div>
     </div>
-
+    {% include 'Encounter/_ogform.html.twig' %}
+    {% include 'Encounter/_form.html.twig' %}
 {% endblock %}
