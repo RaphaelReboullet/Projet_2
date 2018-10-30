@@ -26,9 +26,11 @@
                             <div class="row goal_encounter">
                                 <div class="col-1">
                                     {% if date(encounter.match_date) < date() %}
-                                        <button type="button" class="btn btn-outline-dark add-goal" data-id="{{ encounter.id }}">
-                                            +
-                                        </button>
+                                        {% if session.admin is not empty %}
+                                            <button type="button" class="btn btn-outline-dark add-goal"
+                                                    data-id="{{ encounter.id }}">
+                                                +
+                                            </button>{% endif %}
                                     {% endif %}
                                 </div>
                                 <div class="col-3">
@@ -45,9 +47,12 @@
                                 </div>
                                 <div class="col-1">
                                     {% if date(encounter.match_date) < date() %}
-                                        <button type="button" class="btn btn-outline-dark edit-ogoal" data-id="{{ encounter.id }}">
-                                            +
-                                        </button>
+                                        {% if session.admin is not empty %}
+                                            <button type="button"
+                                                    class="btn btn-outline-dark edit-ogoal"
+                                                    data-id="{{ encounter.id }}">
+                                                +
+                                            </button>{% endif %}
                                     {% endif %}
                                 </div>
                             </div>
@@ -58,8 +63,12 @@
         {% endfor %}
         <div class="row justify-content-around">
             <div class="col-8 col-md-3">
-                {% if session.admin is not empty %}<button type="button" class="btn btn-outline-dark btn-block"
-                data-toggle="modal" data-target="#addEncounter">Ajouter un match</button>{% endif %}
+
+                {% if session.admin is not empty %}
+                    <button type="button" class="btn btn-outline-dark btn-block "
+                            data-toggle="modal" data-target="#addEncounter">Ajouter un match
+                    </button>{% endif %}
+
             </div>
         </div>
     </div>
