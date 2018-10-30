@@ -66,15 +66,12 @@ class ContactFormController extends AbstractController
                     alert("Votre message à bien été envoyé.");
     </script>';
             }
-
-
         }
 
         return $this->twig->render('ContactForm/contactform.html.twig', ['usernameErr' => $usernameErr,
             'userfirstnameErr' => $userfirstnameErr, 'userphoneErr' => $userphoneErr, 'usermailErr' => $usermailErr,
             'userobjectErr' => $userobjectErr,]);
     }
-
 
     public function testInput($data)
     {

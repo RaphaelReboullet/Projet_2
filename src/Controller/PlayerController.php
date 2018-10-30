@@ -65,6 +65,5 @@ class PlayerController extends AbstractController
     public function welcome()
     {
         return $this->twig->render('Accueil/accueil_page.html.twig');
-
     }
 }
