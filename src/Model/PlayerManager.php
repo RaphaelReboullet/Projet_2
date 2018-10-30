@@ -8,10 +8,18 @@
 
 namespace Model;
 
+/**
+ * Class PlayerManager
+ * @package Model
+ */
 class PlayerManager extends AbstractManager
 {
     const TABLE = 'player';
 
+    /**
+     * PlayerManager constructor.
+     * @param \PDO $pdo
+     */
     public function __construct(\PDO $pdo)
     {
         parent::__construct(self::TABLE, $pdo);
@@ -43,6 +51,9 @@ class PlayerManager extends AbstractManager
         }
     }
 
+    /**
+     * @param int $id
+     */
     public function delete(int $id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -52,12 +63,31 @@ class PlayerManager extends AbstractManager
         }
     }
 
+    /**
+     * @param Player $player
+     * @return int
+     */
     public function update(Player $player):int
     {
         // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET isActif = :isActif WHERE id=:id");
         $statement->bindValue('id', $player->getId(), \PDO::PARAM_INT);
         $statement->bindValue('isActif', $player->getisActif(), \PDO::PARAM_INT);
+
+        return $statement->execute();
+    }
+
+    /**
+     * @param int $id
+     * @param string $key
+     * @param string $value
+     * @return bool
+     */
+    public function updateStat(int $id, string $key, string $value)
+    {
+        $statement = $this->pdo->prepare("UPDATE $this->table SET `$key` = :$key WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->bindValue($key, $value, \PDO::PARAM_STR);
 
         return $statement->execute();
     }

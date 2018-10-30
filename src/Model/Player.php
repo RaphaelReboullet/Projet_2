@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mcnitch
+ * User: mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
  * Date: 10/10/18
  * Time: 10:03
  */
@@ -10,134 +10,202 @@ namespace Model;
 
 class Player
 {
-    private $id;
+    public $id;
 
-    private $firstname;
+    public $firstname;
 
-    private $lastname;
+    public $lastname;
 
-    private $birthdate;
+    public $birthdate;
 
-    private $height;
+    public $height;
 
-    private $weight;
+    public $weight;
 
-    private $position;
+    public $position;
 
-    private $number;
+    public $number;
 
-    private $isActif;
+    public $isactif;
 
-    private $portrait;
+    public $portrait;
 
+    /**
+     * @return int
+     */
     public function getId() :int
     {
         return $this->id;
     }
 
-
+    /**
+     * @param int $id
+     * @return Player
+     */
+    public function setId(int $id) :Player
+    {
+        $this->id = $id;
+        return $this;
+    }
+    /**
+     * @return string
+     */
     public function getFirstname() :string
     {
         return ucfirst($this->firstname);
     }
 
-    public function setFirstname($firstname) :string
+    /**
+     * @param string $firstname
+     * @return Player
+     */
+    public function setFirstname(string $firstname) :Player
     {
         $this->firstname = $firstname;
-        return $firstname;
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getLastname() :string
     {
         return strtoupper($this->lastname);
     }
 
-    public function setLastname($lastname) :string
+    /**
+     * @param string $lastname
+     * @return Player
+     */
+    public function setLastname(string $lastname) :Player
     {
         $this->lastname = $lastname;
-        return $lastname;
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getBirthdate() :string
     {
         return $this->birthdate;
     }
 
-    public function setBirthdate($birthdate) :string
+    /**
+     * @param string $birthdate
+     * @return Player
+     */
+    public function setBirthdate(string $birthdate) :Player
     {
-        $this->birthdate = $birthdate;
-        return $birthdate;
+        $this->birthdate = date('Y-m-d', strtotime(str_replace('/', '-', $birthdate)));
+        return $this;
     }
 
+    /**
+     * @return int
+     */
     public function getHeight() :int
     {
         return $this->height;
     }
 
-    public function setHeight($height) :int
+    /**
+     * @param string $height
+     * @return Player
+     */
+    public function setHeight(string $height) :Player
     {
         $this->height = $height;
-        return $height;
+        return $this;
     }
 
+    /**
+     * @return int
+     */
     public function getWeight() :int
     {
         return $this->weight;
     }
 
-    public function setWeight($weight) :int
+    /**
+     * @param string $weight
+     * @return Player
+     */
+    public function setWeight(string $weight) :Player
     {
         $this->weight = $weight;
-        return $weight;
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getPosition() :string
     {
         return $this->position;
     }
 
-    public function setPosition($position) :string
+    /**
+     * @param string $position
+     * @return Player
+     */
+    public function setPosition(string $position) :Player
     {
         $this->position = $position;
-        return $position;
+        return $this;
     }
 
+    /**
+     * @return int
+     */
     public function getNumber() :int
     {
         return $this->number;
     }
 
-    public function setNumber($number) :int
+    /**
+     * @param int $number
+     * @return Player
+     */
+    public function setNumber(int $number) :Player
     {
         $this->number = $number;
-        return $number;
+        return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsactif() :bool
     {
-        return $this->isActif;
+        return $this->isactif;
     }
 
-    public function setIsactif($isActif) :bool
+    /**
+     * @param int $isactif
+     * @return Player
+     */
+    public function setIsactif(int $isactif) :Player
     {
-        $this->isActif = $isActif;
-        return $isActif;
+        $this->isactif = $isactif;
+        return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getPortrait()
+    public function getPortrait() :string
     {
         return $this->portrait;
     }
 
     /**
-     * @param mixed $portrait
+     * @param $portrait
+     * @return mixed
      */
-    public function setPortrait($portrait)
+    public function setPortrait(string $portrait) :Player
     {
         $this->portrait = $portrait;
-        return $portrait;
+        return $this;
     }
 }

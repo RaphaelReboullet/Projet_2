@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: sylvain
+ * User: sylvain, mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
  * Date: 07/03/18
  * Time: 20:52
  * PHP version 7
@@ -32,7 +32,7 @@ abstract class AbstractManager
     /**
      * Initializes Manager Abstract class.
      * @param string $table
-     * @param PDO $pdo
+     * @param \PDO $pdo
      */
     public function __construct(string $table, \PDO $pdo)
     {
@@ -84,6 +84,9 @@ abstract class AbstractManager
         return $statement->fetch();
     }
 
+    /**
+     * @return array
+     */
     public function selectEncounter(): array
     {
         return $this->pdo->query('SELECT encounter.id, match_date, team, `flag`, `opponent_goal`, COUNT(goal) AS goal
@@ -94,12 +97,18 @@ abstract class AbstractManager
               ORDER BY match_date;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 
+    /**
+     * @return array
+     */
     public function selectTeam(): array
     {
         return $this->pdo->query('SELECT id, team FROM ' . $this->table . ' 
                                             ORDER BY team;', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 
+    /**
+     * @return array
+     */
     public function selectGoal(): array
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table . '

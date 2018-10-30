@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mcnitch
+ * User: mcnitch, Damien-trqr, DavidLAVDEV, RaphaelReboullet
  * Date: 18/10/18
  * Time: 10:20
  */

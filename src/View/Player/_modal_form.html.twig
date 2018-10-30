@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/newteam/modify/{{ playerDetails.id }}" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControl">Vous pouvez rentrer la nouvelle valeur.</label>
+                        <input type="hidden" value="{{ playerDetails.id }}" name="id">
+                        <input type="text" class="form-control" name="" id="inputAttribute"
+                               rows="3">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
