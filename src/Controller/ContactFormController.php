@@ -12,7 +12,7 @@ class ContactFormController extends AbstractController
         $username = $userfirstname = $userphone = $usermail = $userobject = '';
 
 
-$errors = null;
+        $errors = null;
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,21 +35,21 @@ $errors = null;
                 }
             }
             if (empty($_POST["userphone"])) {
-               $errors['phone'] = "Votre numéro de téléphone est requis.";
+                $errors['phone'] = "Votre numéro de téléphone est requis.";
             } else {
                 $userphone = $this->testInput($_POST["userphone"]);
 
                 if (!preg_match("`^0[0-9]([-. ]?\d{2}){4}[-. ]?$`", $userphone)) {
-                   $errors['phone'] = "Veuillez entrer un numéro valide.";
+                    $errors['phone'] = "Veuillez entrer un numéro valide.";
                 }
             }
             if (empty($_POST["usermail"])) {
-               $errors['mail'] = "Votre email est requis.";
+                $errors['mail'] = "Votre email est requis.";
             } else {
                 $usermail = $this->testInput($_POST["usermail"]);
                 // check if e-mail address is well-formed
                 if (!filter_var($usermail, FILTER_VALIDATE_EMAIL)) {
-                   $errors['mail'] = "Email invalide.";
+                    $errors['mail'] = "Email invalide.";
                 }
             }
 
@@ -62,7 +62,7 @@ $errors = null;
 
         }
 
-        return $this->twig->render('ContactForm/contactform.html.twig', ['errors' => $errors, '_POST'=> $_POST]);
+        return $this->twig->render('ContactForm/contactform.html.twig', ['errors' => $errors, '_POST' => $_POST]);
     }
 
     public function testInput($data)
