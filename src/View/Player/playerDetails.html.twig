@@ -5,7 +5,7 @@
     <body>
     <div class="container">
         <h1 class="titreplayerdetails">Caractéristiques</h1>
-        <div class="row justify-content-around d-flex align-content-center flex-wrap">
+        <div class="row row_card d-flex align-content-center flex-wrap">
             <div class="col-11 col-md-5 col-lg-4 pd-4">
                 <div class="card playerdetail">
                     <img class="card-img-top-det card_details" src="{{ playerDetails.portrait }}" alt="Card image cap">
@@ -39,18 +39,18 @@
                                 {% endif %}</th>
                             <!-- Button trigger modal -->
                             <th>
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                {% if session.admin is not empty %}<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                                         data-target="#playerModal" data-attribute="{{ value.0 }}">
                                     Modifier
-                                </button>
+                                </button>{% endif %}
                             </th>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
         </div>
-        <div class="row justify-content-between">
-            <div class="col-md-5">
+        <div class="row justify-content-between btn_det">
+            <div class="col-md-4">
                 {% if session.admin is not empty %}<a id="delete" href="/newteam/delete/{{ playerDetails.id }}"
                      class=" btn btn-outline-dark btn-block text-center btn_del">Supprimer le joueur
                   </a>{% endif %}
@@ -58,7 +58,7 @@
                     <p></p>
                 </div>
             </div>
-            <div class="col-md-3 justify-content-right">
+            <div class="col-md-2 btn_ret">
                 <a href="/newteam" class="btn btn-outline-dark btn-block text-center">Retour</a>
             </div>
         </div>

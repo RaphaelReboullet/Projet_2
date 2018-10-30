@@ -63,6 +63,22 @@ body {
     .navbar a:hover {
         color: #ffa91b;
     }
+
+    .btn_det {
+        padding-bottom: 200px;
+    }
+
+    .btn_ret {
+        padding-right: 0px;
+    }
+
+    .row_card {
+        justify-content: space-between;
+    }
+
+    .btn_sess {
+        padding-bottom: 350px;
+    }
 }
 /*------------------------ALL--------------------------------*/
 
@@ -76,6 +92,7 @@ body {
 .slide {
     height: 700px;
 }
+
 /* ------commun shadow-------- */
 
 .form-control {
@@ -514,6 +531,10 @@ footer {
             width: 40px;
             height: 40px;
 
+        }
+
+        .row_card {
+            justify-content: space-around;
         }
     }
 
