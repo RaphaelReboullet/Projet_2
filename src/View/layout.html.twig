@@ -20,6 +20,10 @@
 <nav class="navbar navbar-expand-lg">
 
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-0 order-md-0 navpart1">
+        {% if session.admin is not empty %}
+            <a id="logout" href="newteam/logout"
+               class=" btn btn-outline-dark btn-block text-center btn_del">Se déconnecter</a>
+        {% endif %}
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item">
                 <a class="nav-link ml-4 texte-menu-navbar" href="/">INFOS</a>
@@ -70,9 +74,15 @@
                 <li class="nav-item">
                     <a class="nav-link text-center" href="/contactform">CONTACT</a>
                 </li>
+                {% if session.admin is not empty %}
+                    <a id="logout" href="newteam/logout"
+                       class="nav-item btn btn-outline-dark btn-block text-center btn_del">Se déconnecter</a>
+                {% endif %}
             </ul>
         </div>
+
     </nav>
+
 {% block content %}{% endblock %}
 
 <footer>
@@ -88,6 +98,7 @@
         <a class="nav-link" href="https://www.instagram.com/japan_football_"><img class="ikon" src="https://res.cloudinary.com/dnpr9xeop/image/upload/v1539892479/Instagram-white.png"></a>
     </li>
 </ul>
+
     </div>
 </footer>
 {% block javascript %}

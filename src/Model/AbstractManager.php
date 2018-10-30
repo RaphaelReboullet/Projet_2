@@ -41,7 +41,21 @@ abstract class AbstractManager
         $this->pdo = $pdo;
     }
 
+    public function selectAdmin($data)
+    {
+        $query = 'SELECT admin, password FROM `login` WHERE `admin` = :admin and `password` = :password';
+        $prepared = $this->pdo->prepare($query);
+        $prepared->bindValue('admin', $data['admin'], \PDO::PARAM_STR);
+        $prepared->bindValue('password', hash('sha256', $data['password']), \PDO::PARAM_STR);
+        $prepared->execute();
+        $result = $prepared->fetch(\PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     /**
+     *
+     *
      * Get all row from database.
      *
      * @return array

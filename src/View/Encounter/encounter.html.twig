@@ -58,9 +58,16 @@
         {% endfor %}
         <div class="row justify-content-around">
             <div class="col-8 col-md-3">
-                <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addEncounter">
-                    Ajouter une rencontre
-                </button>
+
+                {% if session.admin is not empty %}<button type="submit" class="btn btn-outline-dark btn-block">Ajouter un match</button>{% endif %}
+            </div>
+            <div class="col-12 col-md-1">
+                <p></p>
+            </div>
+            <div class="col-8 col-md-3">
+                {% if session.admin is not empty %}<button type="submit" class="btn btn-outline-dark btn-block">Ajouter un score</button>{% endif %}
+
+
             </div>
         </div>
     </div>
