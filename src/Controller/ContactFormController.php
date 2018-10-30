@@ -10,46 +10,46 @@ class ContactFormController extends AbstractController
     public function formcontroll()
     {
         $username = $userfirstname = $userphone = $usermail = $userobject = '';
-        $usernameErr = $userfirstnameErr = $userphoneErr = $usermailErr = $userobjectErr = '';
 
 
+        $errors = null;
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (empty($_POST["username"])) {
-                $usernameErr = "Votre nom est requis.";
+                $errors['name'] = "Votre nom est requis.";
             } else {
                 $username = $this->testInput($_POST["username"]);
                 // check if name only contains letters and whitespace
                 if (!preg_match("/^[a-zA-Z ]*$/", $username)) {
-                    $usernameErr = "Seuls les lettres et espaces sont autorisés.";
+                    $errors['name'] = "Seuls les lettres et espaces sont autorisés.";
                 }
             }
             if (empty($_POST["userfirstname"])) {
-                $userfirstnameErr = "Votre prénom est requis.";
+                $errors['firstname'] = "Votre prénom est requis.";
             } else {
                 $userfirstname = $this->testInput($_POST["userfirstname"]);
                 // check if name only contains letters and whitespace
                 if (!preg_match("/^[a-zA-Z ]*$/", $userfirstname)) {
-                    $userfirstnameErr = "Seuls les lettres et espaces sont autorisés.";
+                    $errors['firstname'] = "Seuls les lettres et espaces sont autorisés.";
                 }
             }
             if (empty($_POST["userphone"])) {
-                $userphoneErr = "Votre numéro de téléphone est requis.";
+                $errors['phone'] = "Votre numéro de téléphone est requis.";
             } else {
                 $userphone = $this->testInput($_POST["userphone"]);
 
                 if (!preg_match("`^0[0-9]([-. ]?\d{2}){4}[-. ]?$`", $userphone)) {
-                    $userphoneErr = "Veuillez entrer un numéro valide.";
+                    $errors['phone'] = "Veuillez entrer un numéro valide.";
                 }
             }
             if (empty($_POST["usermail"])) {
-                $usermailErr = "Votre email est requis.";
+                $errors['mail'] = "Votre email est requis.";
             } else {
                 $usermail = $this->testInput($_POST["usermail"]);
                 // check if e-mail address is well-formed
                 if (!filter_var($usermail, FILTER_VALIDATE_EMAIL)) {
-                    $usermailErr = "Email invalide.";
+                    $errors['mail'] = "Email invalide.";
                 }
             }
 
@@ -60,17 +60,9 @@ class ContactFormController extends AbstractController
             }
 
 
-            if ($usernameErr === '' and $userfirstnameErr === '' and $userphoneErr === ''
-                and $usermailErr === '' and $userobjectErr === '') {
-                 echo '<script type="text/javascript">
-                    alert("Votre message à bien été envoyé.");
-    </script>';
-            }
         }
 
-        return $this->twig->render('ContactForm/contactform.html.twig', ['usernameErr' => $usernameErr,
-            'userfirstnameErr' => $userfirstnameErr, 'userphoneErr' => $userphoneErr, 'usermailErr' => $usermailErr,
-            'userobjectErr' => $userobjectErr,]);
+        return $this->twig->render('ContactForm/contactform.html.twig', ['errors' => $errors, '_POST' => $_POST]);
     }
 
     public function testInput($data)

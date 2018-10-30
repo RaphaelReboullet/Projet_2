@@ -1,6 +1,16 @@
 {% extends 'layout.html.twig' %}
-
+{% block javascript %}
+{{ parent() }}
+    {% if errors is empty and _POST is not empty %}
+        <script type="text/javascript">
+        $(document).ready(function(){
+        alert("Votre message à bien été envoyé.");
+        });
+        </script>
+    {% endif %}
+{% endblock %}
 {% block content %}
+
 
     <div class="contact container">
         <form action="" method="post">
@@ -12,7 +22,7 @@
                                placeholder=""
                                required
                                value="{% if (_POST['username'] is defined) %}{{ _POST['username'] }}{% endif %}">
-                        {{ usernameErr }}
+                        {{ errors.name }}
 
                     </div>
                 </div>
@@ -23,7 +33,7 @@
                                placeholder=""
                                required
                                value="{% if (_POST['userfirstname'] is defined) %}{{ _POST['userfirstname'] }}{% endif %}">
-                        {{ userfirstnameErr }}
+                        {{ errors.firstname }}
                     </div>
                 </div>
             </div>
@@ -35,7 +45,7 @@
                                placeholder=""
                                required
                                value="{% if (_POST['userphone'] is defined) %}{{ _POST['userphone'] }}{% endif %}">
-                        {{ userphoneErr }}
+                        {{ errors.phone }}
                     </div>
                 </div>
                 <div class="col-md-6 ">
@@ -45,7 +55,7 @@
                                placeholder="name@example.com"
                                required
                                value="{% if (_POST['usermail'] is defined) %}{{ _POST['usermail'] }}{% endif %}">
-                        {{ usermailErr }}
+                        {{ errors.mail }}
                     </div>
                 </div>
             </div>
@@ -57,18 +67,19 @@
                                placeholder=""
                                required
                                value="{% if (_POST['userobject'] is defined) %}{{ _POST['userobject'] }}{% endif %}">
-                        {{ userobjectErr }}
+                        {{ errors.object }}
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Votre message</label>
-                <textarea class="form-control" name="contact-us_message" id="contact-us_message" placeholder="" required></textarea>
+                <textarea class="form-control" name="contact-us_message" id="contact-us_message" placeholder=""
+                          required></textarea>
             </div>
             <div class="row justify-content-center btn_det">
                 <div class="col-11 col-md-4">
-            <button type="submit" class="btn btn-outline-dark btn-block">Envoyer</button>
+                    <button type="submit" class="btn btn-outline-dark btn-block">Envoyer</button>
                 </div>
             </div>
         </form>

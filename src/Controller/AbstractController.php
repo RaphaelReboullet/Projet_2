@@ -47,6 +47,7 @@ abstract class AbstractController
             $_session['login']= '';
         }
         $this->twig->addGlobal('session', $_SESSION);
+        $this->twig->addGlobal('post', $_POST);
         $this->twig->addExtension(new \Twig_Extension_Debug());
         $this->twig->addFilter(new \Twig_SimpleFilter('cast_to_array', function ($stdClassObject) {
             $response = array();
