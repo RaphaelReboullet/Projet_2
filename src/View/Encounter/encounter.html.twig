@@ -1,10 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="encounter container">
+    <div class="encounter container cont_encount">
         {% for encounter in encounters %}
-            <div class="row justify-content-around">
-                <div class="col encounter">
+            <div class="row fond_encount justify-content-around">
+                <div class="col encounter ">
                     <div class="card text-center encounter_back" id="encounter-{{ encounter.id }}">
                         <div class="card-header calendar-head">
                             {{ encounter.match_date|date(" d / m / Y ") }}
@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="card-footer encounter_back mobile_score text-muted colencount">
-                            <div class="row goal_encounter">
+                            <div class="row goal_encounter justify-content-between">
                                 <div class="col-1">
                                     {% if date(encounter.match_date) < date() %}
                                         {% if session.admin is not empty %}
@@ -33,18 +33,15 @@
                                             </button>{% endif %}
                                     {% endif %}
                                 </div>
-                                <div class="col-3">
 
-                                </div>
                                 <div class="col-12 col-md-4">
-                                    {% if date(encounter.match_date) < date() %}
+                                    {% if date(encounter.match_date) < date() and encounter.opponent_goal is not null %}
                                         <p class="goals">{{ encounter.goal }} - {{ encounter.opponent_goal }}</p>
                                     {% else %}
                                         <p class="goals"> - </p>
                                     {% endif %}
                                 </div>
-                                <div class="col-3">
-                                </div>
+
                                 <div class="col-1">
                                     {% if date(encounter.match_date) < date() %}
                                         {% if session.admin is not empty %}
@@ -62,7 +59,7 @@
             </div>
         {% endfor %}
         <div class="row justify-content-around">
-            <div class="col-8 col-md-3">
+            <div class="col-8 col-md-3 btn_addmatch">
 
                 {% if session.admin is not empty %}
                     <button type="button" class="btn btn-outline-dark btn-block "
