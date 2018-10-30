@@ -62,13 +62,12 @@ class ContactFormController extends AbstractController
 
             if ($usernameErr === '' and $userfirstnameErr === '' and $userphoneErr === ''
                 and $usermailErr === '' and $userobjectErr === '') {
-                ?>
-<script >
-    onsubmit = function(){
-    alert("Votre message à bien été envoyé.");}
-</script><?php
-                ;
+                 echo '<script type="text/javascript">
+                    alert("Votre message à bien été envoyé.");
+    </script>';
             }
+
+
         }
 
         return $this->twig->render('ContactForm/contactform.html.twig', ['usernameErr' => $usernameErr,
