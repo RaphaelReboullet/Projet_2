@@ -63,10 +63,12 @@
         {% endfor %}
         <div class="row justify-content-around">
             <div class="col-8 col-md-3">
+
                 {% if session.admin is not empty %}
                     <button type="button" class="btn btn-outline-dark btn-block "
                             data-toggle="modal" data-target="#addEncounter">Ajouter un match
                     </button>{% endif %}
+
             </div>
         </div>
     </div>
